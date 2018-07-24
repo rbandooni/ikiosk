@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hours',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hours.component.scss']
 })
 export class HoursComponent implements OnInit {
+ 
 
-  constructor() { }
+
+  constructor(private router:Router) {
+
+   }
 
   ngOnInit() {
+
   }
 
+
+  linkToComponent(componentName: string) {
+    this.router.navigate(['/' + componentName]);
+  }
 }

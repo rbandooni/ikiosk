@@ -1,7 +1,45 @@
+$box-shadow: 1px 0px 0px rgb(28, 33, 39),0px 1px 0px rgba(11, 13, 15, 0.705),
+  				2px 1px 0px rgba(8, 8, 8, 0.925),1px 2px 0px rgba(11, 13, 15, 0.705),
+  				3px 2px 0px rgba(8, 8, 8, 0.925),2px 3px 0px rgba(11, 13, 15, 0.705),
+  				4px 3px 0px rgba(8, 8, 8, 0.925),3px 4px 0px rgba(11, 13, 15, 0.705),
+  				5px 4px 0px rgba(8, 8, 8, 0.925),4px 5px 0px rgba(11, 13, 15, 0.705),
+  				6px 5px 0px rgba(8, 8, 8, 0.925),5px 6px 0px rgba(11, 13, 15, 0.705),
+  				7px 6px 0px rgba(8, 8, 8, 0.925),6px 7px 0px rgba(11, 13, 15, 0.705),
+  				8px 7px 0px rgba(8, 8, 8, 0.925),7px 8px 0px rgba(11, 13, 15, 0.705),
+  				9px 8px 0px rgba(8, 8, 8, 0.925),8px 9px 0px rgba(11, 13, 15, 0.705);
+
 #clock {
     width: 250px;
     height: 250px;
     // padding: 1em;
     padding: 1px;
     border: 1px solid #000;
+}
+
+.kioskGrid {
+    div {
+        width: 13vw;
+        height: 13vw;
+        background: rgba(0,0,0,0.8);
+        border-radius: 15%;
+        // box-shadow: 0 2vw 4vw -1vw rgba(0,0,0,1);
+        box-shadow: $box-shadow;
+        text-align: center;
+        align-items: center;
+        margin: 0 auto;
+        vertical-align: middle;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    i {
+        font-size: 10vw;
+    }
+    }
+    canvas {
+        cursor: pointer; 
+        // box-shadow: 0 2vw 4vw -1vw rgba(0, 0, 0, 0.8); 
+        box-shadow: $box-shadow;
+        border-radius: 10%; 
+        background: rgba(0,0,0,0.8);
+    }
 }

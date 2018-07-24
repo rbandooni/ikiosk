@@ -1,37 +1,51 @@
 <div class="flex-grid">
   <div class="col kioskGrid clockGrid">
-<canvas (click)="linkToHoursComponent()" id="clock" width="250" height="250" style="cursor: pointer; box-shadow: 0 2vw 4vw -1vw rgba(0, 0, 0, 0.8); border-radius: 10%; background: rgba(0,0,0,0.8);"></canvas>
+<canvas (click)="linkToComponent('hours')" #clock></canvas>
 <p class="kioskGridText">{{ gridText[0] | uppercase }}</p>
   </div>
   <div class="col kioskGrid">
-    <img style="box-shadow: 0 2vw 4vw -1vw rgba(0, 0, 0, 0.8); border-radius: 10%;" src="//placehold.it/250x250" alt="">
+        <div (click)="linkToComponent('computers')">
+    <i class="fa fa-desktop"></i>
+      </div>
     <p class="kioskGridText">{{ gridText[1] | uppercase }}</p>
   </div>
   <div class="col kioskGrid">
-        <img style="box-shadow: 0 2vw 4vw -1vw rgba(0, 0, 0, 0.8); border-radius: 10%;" src="//placehold.it/250x250" alt="">
+        <div (click)="linkToComponent('building-map')">
+            <i class="fa fa-map"></i>
+        </div>
         <p class="kioskGridText">{{ gridText[2] | uppercase }}</p>
   </div>
   <div class="col kioskGrid">
-        <img style="box-shadow: 0 2vw 4vw -1vw rgba(0, 0, 0, 0.8); border-radius: 10%;" src="//placehold.it/250x250" alt="">
+        <div (click)="linkToComponent('news')">
+              <i class="fa fa-newspaper-o"></i>
+        </div>
         <p class="kioskGridText">{{ gridText[3] | uppercase }}</p>
   </div>
 
 </div>
 <div class="flex-grid">
-  <div class="col kioskGrid">
-        <img style="box-shadow: 0 2vw 4vw -1vw rgba(0, 0, 0, 0.8); border-radius: 10%;" src="//placehold.it/250x250" alt="">
-        <p class="kioskGridText">{{ gridText[0] | uppercase }}</p>
-  </div>
-  <div class="col kioskGrid">
-        <img style="box-shadow: 0 2vw 4vw -1vw rgba(0, 0, 0, 0.8); border-radius: 10%;" src="//placehold.it/250x250" alt="">
-        <p class="kioskGridText">{{ gridText[1] | uppercase }}</p>
-  </div>
-  <div class="col kioskGrid">
-        <img style="box-shadow: 0 2vw 4vw -1vw rgba(0, 0, 0, 0.8); border-radius: 10%;" src="//placehold.it/250x250" alt="">
-        <p class="kioskGridText">{{ gridText[2] | uppercase }}</p>
-  </div>
-  <div class="col kioskGrid">
-        <img style="box-shadow: 0 2vw 4vw -1vw rgba(0, 0, 0, 0.8); border-radius: 10%;" src="//placehold.it/250x250" alt="">
-        <p class="kioskGridText">{{ gridText[1] | uppercase }}</p>
-  </div>
+<div class="col kioskGrid">
+      <div (click)="linkToComponent('news')">
+            <i class="fa fa-automobile"></i>
+      </div>
+      <p class="kioskGridText">{{ gridText[4] | uppercase }}</p>
+</div>
+<div class="col kioskGrid">
+      <div (click)="linkToComponent('news')">
+            <i class="fa fa-server"></i>
+      </div>
+      <p class="kioskGridText">{{ gridText[5] | uppercase }}</p>
+</div>
+<div class="col kioskGrid">
+      <div (click)="linkToComponent('news')">
+            <i class="fa fa-wifi"></i>
+      </div>
+      <p class="kioskGridText">{{ gridText[6] | uppercase }}</p>
+</div>
+<div class="col kioskGrid">
+      <div (click)="linkToComponent('news')">
+            <i class="fa fa-id-card"></i>
+      </div>
+      <p class="kioskGridText">{{ gridText[7] | uppercase }}</p>
+</div>
 </div>
