@@ -1,13 +1,33 @@
-<div class="wrapper">
-  <div id="primary" class="flex-grid">
-  <header class="col">
-    <img class="img-responsive" src="/assets/images/ikiosk-logo.svg" alt="">
+<div class="container-fluid">
+  <!-- <div id="primary" class="row">
+  <header class="col-lg-3">
+    <img class="img-responsive" [src]="logoURL" alt="Western Michigan University Logo" style="height: 100px;">
+      <a class="btn btn-lg btn-success" routerLink="">Home</a> 
   </header>
+ 
+  </div> -->
+  <!-- <nav class="navbar navbar-light" style="background: transparent;"> -->
+    <!-- <a href="#" class="navbar-brand"> -->
+      <!-- <img [src]="logoURL" alt="Western Michigan University Libraries" style="width: 70%;"> -->
+    <!-- </a> -->
+    <!-- <form class="form-inline">
+      <a class="btn btn-danger" type="button" href="logout.php">Logout</a>
 
-  </div>
-  <div id="mainContent">
-<router-outlet></router-outlet>
+    </form> -->
+  <!-- </nav> -->
+  <div id="mainContent" [@fadeAnimation]="o.isActivated ? o.activatedRoute: ''" class="row">
+    <!-- <div id="mainContent" [className]="'row'"> -->
+<router-outlet #o="outlet" (messageEvent)="receiveMessage($event)"></router-outlet>
   </div>
   
 </div>
+
+<footer [className]="'fixed-bottom'">
+  <div class="container">
+    <img class="homeButton" [src]="homeButtonURL" alt="Home" routerLink="index">
+    11:49 AM <BR>
+    10/8/2018
+    <img class="logo" [src]="logoURL" alt="Western Michigan University Libraries">
+  </div>
+</footer>
 

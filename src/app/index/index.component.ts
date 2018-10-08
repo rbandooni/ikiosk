@@ -8,7 +8,19 @@ import { Router } from "@angular/router";
 })
 export class IndexComponent implements AfterViewInit {
 
-  gridText:Object =  ['library hours', 'available computers', 'building map', 'library news'];
+  ikioskGrid: boolean;
+  gridSize:number = 4;
+
+  gridClass: string = 'col-md-3 col-sm-4 col-xs-6 kioskGrid';
+
+  // gridClass: string = 'col-lg-3 col-md-4 col-sm-6 col-xs-12 kioskgrid';
+
+  gridText: Object = ['library hours', 'available computers', 'building map', 'library news', 'events', 'study rooms', 'appointment', 'random 3'];
+
+  currentDate: string;
+  dayText: string;
+  day: number;
+  month: number;
 
   @ViewChild('clock') public canvas: any;
   // setting witdth and height of canvas
@@ -17,35 +29,88 @@ export class IndexComponent implements AfterViewInit {
 
   private cx: CanvasRenderingContext2D;
 
-  constructor(private router: Router) { }
-  //  cx: number
-  //  radius: number
+  constructor(private router: Router) {
+
+    // if (window.screen.availWidth === 1920) {
+      this.ikioskGrid = true;
+    // }
+    // else {
+      // this.ikioskGrid = false;
+    // }
+
+  }
 
 
-   
+  ngOnInit() {
+    // console.log(
+    console.log('WIDTH', window.screen.availWidth);
+    console.log('HEIGHT', window.screen.availHeight);
+
+    var dateObj = new Date();
+    // var month = dateObj.getUTCMonth()  //+ 1; //months from 1-12
+    var day = dateObj.getDate();
+    var year = dateObj.getUTCFullYear();
+    var weekday = new Array(7);
+    var monthArr = new Array(12);
+    monthArr[0] = "January";
+    monthArr[1] = "February";
+    monthArr[2] = "March";
+    monthArr[3] = "April";
+    monthArr[4] = "May";
+    monthArr[5] = "June";
+    monthArr[6] = "July";
+    monthArr[7] = "August";
+    monthArr[8] = "September";
+    monthArr[9] = "October";
+    monthArr[10] = "November";
+    monthArr[11] = "December";
+
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+    var month = monthArr[dateObj.getMonth()];
+    var n = weekday[dateObj.getDay()];
+    this.dayText = n;
+    this.day = day;
+    this.month = month;
+    this.currentDate = year + "-" + dateObj.getMonth() + "-" + day;
+
+  }
+
   ngAfterViewInit() {
-    // get the context
-    const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
-    this.cx = canvasEl.getContext('2d');
-    canvasEl.width = this.width;
-    canvasEl.height = this.height;
-    // let canvas = document.getElementById("clock")[0];
 
-    // let cx = canvas.getContext("2d");
-    let radius = canvasEl.height / 2;
-    console.log('radius', radius)
-    this.cx.translate(radius, radius);
-    radius = radius * 0.90;
-    // this.cx = cx;
-    // this.radius = radius;
-    setInterval(() => this.drawClock(radius), 1000);
-    
+
+    // get the context
+    if (this.ikioskGrid) {
+      const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
+      this.cx = canvasEl.getContext('2d');
+      canvasEl.width = this.width;
+      canvasEl.height = this.height;
+      // let canvas = document.getElementById("clock")[0];
+
+      // let cx = canvas.getContext("2d");
+      let radius = canvasEl.height / 2;
+      console.log('radius', radius)
+      this.cx.translate(radius, radius);
+      radius = radius * 0.90;
+      // this.cx = cx;
+      // this.radius = radius;
+      setInterval(() => this.drawClock(radius), 1000);
+    }
+
+
+    // console.log(this.ikioskGrid)
+
   }
 
 
 
-  linkToComponent(componentName:string) {
-    this.router.navigate(['/'+componentName]);
+  linkToComponent(componentName: string) {
+    this.router.navigate(['/' + componentName]);
   }
   drawClock(rad) {
     this.drawFace(this.cx, rad);
@@ -122,7 +187,7 @@ export class IndexComponent implements AfterViewInit {
     else cx.strokeStyle = '#2c2928';
     cx.stroke();
     cx.rotate(-pos);
-    
+
   }
 
 

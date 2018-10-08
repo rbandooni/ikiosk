@@ -1,8 +1,21 @@
 #hoursWrapper {
-    background: #eee;
-    width: 90%;
+    background: rgb(221, 218, 218);
+    width: 95%;
     margin: 0 auto;
-    height: 80vh;
-    border-radius:  3em;
+    height: auto;
+    border-radius:  1.5em;
     color: #000;
+    div{
+        padding: 2em 2em;
+    }
+}
+#arrow {
+    display: block;
+    position: absolute;
+    z-index: 999;
+    
+    img {
+        width: 50%;
+        
+    }
 }

@@ -10,6 +10,12 @@ import { MapComponent } from './map/map.component';
 import { NewsComponent } from './news/news.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HoursService } from './hours.service';
+import { HttpClientModule } from '@angular/common/http';
+import { RoomsComponent } from './rooms/rooms.component';
+import { CalendarComponent } from './calendar/calendar.component';
+
 
 @NgModule({
   declarations: [
@@ -18,14 +24,23 @@ import { environment } from '../environments/environment';
     HoursComponent,
     ComputersComponent,
     MapComponent,
-    NewsComponent
+    NewsComponent,
+    RoomsComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HoursService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+// declare var $: any;
+
+export class AppModule { 
+
+}

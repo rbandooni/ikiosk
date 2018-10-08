@@ -5,6 +5,8 @@ import { HoursComponent } from './hours/hours.component';
 import { ComputersComponent } from './computers/computers.component';
 import { NewsComponent } from './news/news.component';
 import { MapComponent } from './map/map.component';
+import { RoomsComponent } from './rooms/rooms.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 const routes: Routes = [
   {
@@ -20,12 +22,20 @@ const routes: Routes = [
     component: ComputersComponent
   },
   {
+    path: 'calendar',
+    component: CalendarComponent
+  },
+  {
     path: 'news',
     component: NewsComponent
   },
   {
     path: 'building-map',
     component: MapComponent
+  },
+  {
+    path: 'rooms',
+    component: RoomsComponent
   },
   {
     path: '**',

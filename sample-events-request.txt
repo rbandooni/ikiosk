@@ -1,0 +1,170 @@
+{
+    "events": [
+        {
+            "id": 4663116,
+            "title": "Open Textbook Workshop for Faculty",
+            "allday": false,
+            "start": "2018-10-26T10:00:00-04:00",
+            "end": "2018-10-26T12:00:00-04:00",
+            "description": "<p><span style=\"font-size:14px;\"><strong>Agenda</strong></span></p>\r\n\r\n<ul>\r\n\t<li><span style=\"font-size:14px;\">10&nbsp;a.m. to&nbsp;noon&nbsp;- Program in room 1060</span></li>\r\n\t<li><span style=\"font-size:14px;\">12 to 1 p.m.&nbsp;- Optional lunch to be served in room 1035</span></li>\r\n</ul>\r\n\r\n<p><span style=\"font-size:14px;\"><strong>Registration&nbsp;</strong></span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><a href=\"https://docs.google.com/forms/d/e/1FAIpQLSdY-eMfdFRy1g2G9cQMw-wB0HlMiSYcZHP56htmEKsAiAkGmA/viewform\">Complete the Open Textbook Workshop application form</a>.&nbsp;Register by Friday, October 12, 2018. Capacity is limited and open textbooks are not available for all subjects. Preference will be based on textbook subject area availability.</span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><strong>Help Lower Textbook Costs for Students</strong></span></p>\r\n\r\n<p><span style=\"font-size:14px;\">Have students in your classes dropped out because they couldn&rsquo;t afford the textbook? Have you been shocked at the cost of textbooks for the classes that you teach? Would you like to help but don&rsquo;t know exactly how to proceed? Learn about possible solutions by attending a two-hour workshop on October 26 and possibly receive $200 for your efforts!</span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><strong>Did You Know...&nbsp;</strong></span></p>\r\n\r\n<ul>\r\n\t<li><span style=\"font-size:14px;\">The high cost of some course materials can impede students&rsquo; academic success.&nbsp;</span></li>\r\n\t<li><span style=\"font-size:14px;\">The College Board estimates that the average student was expected to pay $1200 - $1400 for textbooks and supplies in 2017-18.&nbsp;</span></li>\r\n\t<li><span style=\"font-size:14px;\">The cost of textbooks is rising at a rate of 4 times inflation.&nbsp;</span></li>\r\n\t<li><span style=\"font-size:14px;\">7 out of 10 students do not purchase a required textbook during their academic career because of cost.</span></li>\r\n</ul>\r\n\r\n<p><span style=\"font-size:14px;\"><strong>Open Textbooks</strong></span></p>\r\n\r\n<p><span style=\"font-size:14px;\">Open access textbooks (digitally available textbooks written by qualified academics made freely available) may help alleviate the burden of some textbook costs for students. Open textbooks are full, real textbooks licensed to be freely used, edited, and distributed. Increasingly, faculty members all across the country are adopting open textbooks as one way to address this crisis.</span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><strong>What You Can Do</strong></span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><a href=\"https://docs.google.com/forms/d/e/1FAIpQLSdY-eMfdFRy1g2G9cQMw-wB0HlMiSYcZHP56htmEKsAiAkGmA/viewform\">Attend the Open Textbook workshop</a> &mdash; a two-hour session where you can learn about open access textbooks and discover what is available in your field. Following the workshop, lunch will be served in room 1035 for workshop attendees and others at WMU who are also learning about open educational resources. You will have the opportunity to write a short review of an open textbook that will be published on the Internet. Your review will benefit other faculty considering open textbooks. You will receive $200 as incidental pay for your participation and written review.</span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><strong>Presenter: </strong>David Ernst of the University of Minnesota Open Textbook Initiative</span></p>",
+            "url": {
+                "public": "https://wmich.libcal.com/event/4663116",
+                "admin": "https://wmich.libcal.com/aevent.php?c=9993&m=edit&event_id=4663116"
+            },
+            "location": {
+                "id": 17116,
+                "type": 0,
+                "name": "Fetzer Center, Room 1060"
+            },
+            "campus": "",
+            "category": [
+                {
+                    "id": 40627,
+                    "name": "Open Educational Resources"
+                }
+            ],
+            "owner": {
+                "id": 47233,
+                "name": "Maira Bundza"
+            },
+            "presenter": "David Ernst of the University of Minnesota Open Textbook Initiative",
+            "calendar": {
+                "id": 9993,
+                "name": "University Libraries Events",
+                "public": "https://wmich.libcal.com/calendar/events",
+                "admin": "https://wmich.libcal.com/admin/calendar/9993"
+            },
+            "seats": "",
+            "registration": false,
+            "color": "#B91233",
+            "featured_image": "",
+            "future_dates": []
+        },
+        {
+            "id": 4663507,
+            "title": "Open Textbook Workshop for Staff",
+            "allday": false,
+            "start": "2018-10-26T13:00:00-04:00",
+            "end": "2018-10-26T14:30:00-04:00",
+            "description": "<p><span style=\"font-size:14px;\"><strong>Agenda</strong></span></p>\r\n\r\n<ul>\r\n\t<li><span style=\"font-size:14px;\">12 to 1&nbsp;p.m. - Optional lunch to be served in room 1035</span></li>\r\n\t<li><span style=\"font-size:14px;\">1 to 2:30pm - Program in room 1060</span></li>\r\n</ul>\r\n\r\n<p><span style=\"font-size:14px;\"><strong>Registration</strong></span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><a href=\"https://docs.google.com/forms/d/e/1FAIpQLSfZjxxUOcUGpAMS43uBj8Y06nhVyehUXZCmEMayGIZG4YBIYQ/viewform\">Complete the Open Textbook Workshop application form</a>. Register by Monday, October 22, 2018.</span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><strong>Help Lower Textbook Costs for Students</strong></span></p>\r\n\r\n<p><span style=\"font-size:14px;\">Have you heard students complain about the cost of textbooks? Have you been shocked at the cost of textbooks for the classes that you teach? We are offering a workshop on one alternative.</span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><strong>Did You Know...&nbsp;</strong><br />\r\n* The high cost of some course materials can impede students&rsquo; academic success.&nbsp;<br />\r\n* The College Board estimates that the average student was expected to pay $1200 - $1400 for textbooks and supplies in 2017-18.&nbsp;<br />\r\n* The cost of textbooks is rising at a rate of 4 times inflation.&nbsp;<br />\r\n* 7 out of 10 students do not purchase a required textbook during their academic career because of cost.</span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><strong>Open Textbooks</strong></span></p>\r\n\r\n<p><span style=\"font-size:14px;\">Open access textbooks (digitally available textbooks written by qualified academics made freely available) may help alleviate the burden of some textbook costs for students. Open textbooks are full, real textbooks licensed to be freely used, edited, and distributed. Increasingly, faculty members all across the country are adopting open textbooks as one way to address this crisis.</span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><strong>What You Can Do</strong></span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><a href=\"https://docs.google.com/forms/d/e/1FAIpQLSfZjxxUOcUGpAMS43uBj8Y06nhVyehUXZCmEMayGIZG4YBIYQ/viewform\">Attend the Open Textbook workshop</a> to ensure that you as support staff and partners have the same information as faculty in terms of affordability, student success, and potential impacts of open education, and understand your unit&#39;s role in supporting open textbook and other open educational resources (OER) adoptions. Free lunch in room 1035&nbsp;before the workshop.</span></p>\r\n\r\n<p><span style=\"font-size:14px;\"><strong>Presenter:</strong> Meg Brown-Sica from Colorado State University in Ft. Collins, CO and the Open Textbook Network</span></p>",
+            "url": {
+                "public": "https://wmich.libcal.com/event/4663507",
+                "admin": "https://wmich.libcal.com/aevent.php?c=9993&m=edit&event_id=4663507"
+            },
+            "location": {
+                "id": 17116,
+                "type": 0,
+                "name": "Fetzer Center, Room 1060"
+            },
+            "campus": "",
+            "category": [
+                {
+                    "id": 40627,
+                    "name": "Open Educational Resources"
+                }
+            ],
+            "owner": {
+                "id": 47233,
+                "name": "Maira Bundza"
+            },
+            "presenter": "Meg Brown-Sica from Colorado State University in Ft. Collins, CO and the Open Textbook Network",
+            "calendar": {
+                "id": 9993,
+                "name": "University Libraries Events",
+                "public": "https://wmich.libcal.com/calendar/events",
+                "admin": "https://wmich.libcal.com/admin/calendar/9993"
+            },
+            "seats": "",
+            "registration": false,
+            "color": "#B91233",
+            "featured_image": "",
+            "future_dates": []
+        },
+        {
+            "id": 4682178,
+            "title": "Intro to VR",
+            "allday": false,
+            "start": "2018-10-26T14:00:00-04:00",
+            "end": "2018-10-26T15:30:00-04:00",
+            "description": "<p>Get your first look at Virtual Reality and learn about the different types of VR content that are available. We will explore panoramic photographs, VR Video, non-interactive VR content, and fully interactive VR titles.</p>\r\n\r\n<p>Learn about VR workshops offered at Western Michigan University at&nbsp;<a href=\"https://www.wmich.edu/vr/learning\">wmich.edu/vr/learning</a>.&nbsp;</p>\r\n\r\n<ul>\r\n</ul>",
+            "url": {
+                "public": "https://wmich.libcal.com/event/4682178",
+                "admin": "https://wmich.libcal.com/aevent.php?c=9993&m=edit&event_id=4682178"
+            },
+            "location": {
+                "id": 33618,
+                "type": 2,
+                "name": "VR Lab (Waldo 0135)"
+            },
+            "campus": {
+                "id": 5110,
+                "name": "Waldo Library"
+            },
+            "category": [
+                {
+                    "id": 40626,
+                    "name": "Virtual Reality"
+                }
+            ],
+            "owner": {
+                "id": 35730,
+                "name": "Scooter Russell"
+            },
+            "presenter": "",
+            "calendar": {
+                "id": 9993,
+                "name": "University Libraries Events",
+                "public": "https://wmich.libcal.com/calendar/events",
+                "admin": "https://wmich.libcal.com/admin/calendar/9993"
+            },
+            "seats": "",
+            "registration": false,
+            "color": "#0091C1",
+            "featured_image": "",
+            "future_dates": []
+        },
+        {
+            "id": 4682676,
+            "title": "Creating Texture for VR with Substance Painter",
+            "allday": false,
+            "start": "2018-11-02T10:30:00-04:00",
+            "end": "2018-11-02T12:00:00-04:00",
+            "description": "<p>Learn the basics of Substance Painter, one of the leading programs for creating materials for 3D objects in games and VR. We will learn how to prep models for use in Painter, and how to add textures, maps and Smart Materials that will truly bring your 3D models to life!</p>\r\n\r\n<p>No registration required.</p>\r\n\r\n<p>Learn more about VR workshops at Western Michigan University at <a href=\"https://www.wmich.edu/vr/learning\">wmich.edu/vr/learning</a>.</p>",
+            "url": {
+                "public": "https://wmich.libcal.com/event/4682676",
+                "admin": "https://wmich.libcal.com/aevent.php?c=9993&m=edit&event_id=4682676"
+            },
+            "location": {
+                "id": 33618,
+                "type": 2,
+                "name": "VR Lab (Waldo 0135)"
+            },
+            "campus": {
+                "id": 5110,
+                "name": "Waldo Library"
+            },
+            "category": [
+                {
+                    "id": 40626,
+                    "name": "Virtual Reality"
+                }
+            ],
+            "owner": {
+                "id": 35730,
+                "name": "Scooter Russell"
+            },
+            "presenter": "",
+            "calendar": {
+                "id": 9993,
+                "name": "University Libraries Events",
+                "public": "https://wmich.libcal.com/calendar/events",
+                "admin": "https://wmich.libcal.com/admin/calendar/9993"
+            },
+            "seats": "",
+            "registration": false,
+            "color": "#0091C1",
+            "featured_image": "",
+            "future_dates": []
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+tr.active {
+    background-color: #ececec;
+}
+
+tr.active:after {
+    content: '►';
+    color: #ececec; // background-color: white;
+    font-size: 2em;
+    position: relative;
+    line-height: 200%;
+    right: -20px;
+}
+
+.icon {
+    background-image: url('//ikiosk.library.wmich.edu/Computer-01.png');
+    background-size: cover;
+    background-size: auto 28px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position: left center;
+}
+
+.icon.icon1 {
+    background-image: url('//itlabs-labstats.bernhard.wmich.edu/Images/ComputerIcons/Computer-01-InUse.png');
+}
+
+.icon.icon2 {
+    background-image: url('//itlabs-labstats.bernhard.wmich.edu/Images/ComputerIcons/Computer-01-PoweredOn.png');
+}
+
+.icon.icon3 {
+    background-image: url('//itlabs-labstats.bernhard.wmich.edu/Images/ComputerIcons/Computer-01-Offline.png');
+}

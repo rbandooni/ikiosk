@@ -32,7 +32,11 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/js/clock.js"
+              "node_modules/jquery/dist/jquery.js",
+              "src/assets/js/clock.js",
+              "src/assets/js/calendario.js",
+              "src/assets/js/ripples.js"
+              
             ]
           },
           "configurations": {
@@ -47,7 +51,7 @@
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
-              "namedChunks": false,
+              "namedChunks": true,
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -84,7 +88,11 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/js/clock.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/clock.js",
+              "src/assets/js/calendario.js",
+              "src/assets/js/ripples.js"
+              
             ],
             "assets": [
               "src/favicon.ico",

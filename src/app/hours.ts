@@ -1,5 +1,5 @@
 export interface Hours {
-    branch: string;
-    startHour: string;
-    closeHour: string;
+    Branch: string;
+    StartHour: string;
+    CloseHour: string;
 }

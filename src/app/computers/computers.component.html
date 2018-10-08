@@ -1,3 +1,94 @@
-<p>
-  computers works!
-</p>
+<div class="routeContainer" (swiperight)="backToHome()">
+  <div class="row">
+
+    <div class="col-lg-2">
+      <!-- <a routerLink="" class="btn btn-lg btn-success">HOME</a> -->
+      <h1 class="">Computers</h1>
+      <small>Click to view available computers</small>
+      <!-- <ul class="list-group pushBottom">
+        <li class="list-group-item d-flex justify-content-between align-items-center"><h3>1st Floor
+          <span class="badge badge-primary badge-pill" style="margin-left: 3em;">{{ firstFloorComputers?.Available }}/{{ firstFloorComputers?.Total }}</span></h3>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center"><h3>2nd Floor
+          <span class="badge badge-primary badge-pill" style="margin-left: 3em;">{{ secondFloorComputers?.Available }}/{{ secondFloorComputers?.Total }}</span></h3>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center"><h3>3rd Floor
+          <span class="badge badge-primary badge-pill" style="margin-left: 3em;">{{ thirdFloorComputers?.Available }}/{{ thirdFloorComputers?.Total }}</span></h3>
+
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center"><h3>Lower Level
+          <span class="badge badge-primary badge-pill" style="margin-left: 3em;">{{ lowerLevelComputers?.Available }}/{{ lowerLevelComputers?.Total }}</span></h3>
+        </li>
+        <!- <li class="list-group-item">Vestibulum at eros</li> ->
+      </ul> -->
+
+      <table class="table table-hover table-responsive">
+        <tbody>
+          <tr class="active">
+            <td><h4>1<sup>st</sup> Floor</h4></td>
+            <td><h4><span class="badge badge-primary badge-pill">{{ firstFloorComputers?.Available }}/{{firstFloorComputers?.Total }}</span></h4>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>2<sup>nd</sup> Floor</h4>
+            </td>
+            <td>
+              <h4><span class="badge badge-primary badge-pill">{{ secondFloorComputers?.Available }}/{{ secondFloorComputers?.Total }}</span></h4>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>3<sup>rd</sup> Floor</h4>
+            </td>
+            <td>
+              <h4><span class="badge badge-primary badge-pill">{{ thirdFloorComputers?.Available }}/{{
+                  thirdFloorComputers?.Total }}</span></h4>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h4>Lower Level</h4>
+            </td>
+            <td>
+              <h4><span class="badge badge-primary badge-pill">{{ lowerLevelComputers?.Available }}/{{
+                  lowerLevelComputers?.Total }}</span></h4>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- <h2 class="pushBottom">Legend</h2> -->
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th style="border-top: 0px;">Color Legend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="icon icon1"></td>
+            <td>In Use</td>
+          </tr>
+          <tr>
+            <td class="icon icon2"></td>
+            <td>Powered On</td>
+          </tr>
+          <tr>
+            <td class="icon icon3"></td>
+            <td>Offline</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <!-- <div class="col-lg-8" class="pageTitle"><h1> {{title | uppercase }} </h1></div> -->
+    <div class="col-lg-10">
+      <div id="targetMap">
+        <iframe src="//ikiosk.library.wmich.edu/_floor1.html" frameborder="0" style="overflow: hidden; margin: 0; width: 100%; height:900px; border: none;"></iframe>
+      </div>
+    </div>
+
+  </div>
+
+</div>

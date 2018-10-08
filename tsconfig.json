@@ -3,6 +3,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    // "exclude": [
+    //   "node_modules",
+    //   "typings"
+    // ],
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -10,11 +14,15 @@
     "experimentalDecorators": true,
     "target": "es5",
     "typeRoots": [
-      "node_modules/@types"
+      "./node_modules/@types",
+      "./types"
     ],
     "lib": [
       "es2017",
       "dom"
+    ],
+    "types": [
+      "jquery"
     ]
   }
 }
