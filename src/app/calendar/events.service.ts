@@ -3,10 +3,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
+import { map } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
-export class LabStatsService {
+
+export class EventsService {
+
+  private apiTokenURL = 'https://api2.libcal.com/1.1/oauth/token';
+
+  private apiURL = 'https://api2.libcal.com/1.1/events?cal_id=9993';
 
   // private itLabsURL: string = "https://itlabs-labstats.bernhard.wmich.edu";
 
@@ -19,12 +26,34 @@ export class LabStatsService {
   //   { title: "Lower Level", map_id: 18, total: -1, available: -1, label: "Lib_waldo_floor_lower" }
   // ];
 
-
+  private apiToken: string = null;
   constructor(private http: HttpClient) { }
 
-  // getAvailableComputers(): Observable<any> {
-  //   return this.http.get(this.itLabsURL + this.availableComputersURL, {
-  //     headers: new HttpHeaders().set('Authorization', 'acf442ce-27d8-406e-bbf5-98a438d13b68')
-  //   })
-  // }
-}
+  getToken() {
+    // return this.http.post(this.apiTokenURL, {
+    //   'client_id': 303,
+    //   'client_secret': 'bf62dd89e6dfc88e84c0a5839a22ac38',
+    //   'grant_type': 'client_credentials'
+    // }).pipe(map(data => ))
+
+     this.http.post(this.apiTokenURL, {
+      'client_id': 303,
+      'client_secret': 'bf62dd89e6dfc88e84c0a5839a22ac38',
+      'grant_type': 'client_credentials'
+    }).pipe(map((response: any) => { 
+    return response;
+  }
+    ));
+
+  }
+
+  getAllEvents(token: string): Observable<any> {
+  
+    return this.http.get(this.apiURL, {
+      headers: new HttpHeaders().set('Authorization', token)
+    });
+ }
+  }
+
+
+

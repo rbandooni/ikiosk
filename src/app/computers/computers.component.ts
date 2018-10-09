@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from "jquery";
+// import * as $ from "jquery";
 import { LabStatsService } from '../lab-stats.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -23,7 +23,7 @@ export class ComputersComponent implements OnInit {
 
   // public firstFloor: floorComputers;
 
-  constructor(private lstat:LabStatsService, private router:Router) {
+  constructor(private lstat: LabStatsService, private router: Router) {
     this.lstat.getAvailableComputers().subscribe((res) => {
       console.log(res);
       this.firstFloorComputers = res.Groups[0];
@@ -31,7 +31,7 @@ export class ComputersComponent implements OnInit {
       this.thirdFloorComputers = res.Groups[3];
       this.lowerLevelComputers = res.Groups[2];
       console.log(this.firstFloorComputers);
-    })
+    });
    }
 
   ngOnInit() {
@@ -42,16 +42,11 @@ export class ComputersComponent implements OnInit {
     //   domain: 'https://itlabs-labstats.bernhard.wmich.edu'
     // });
 
-    
 
     // this.lstat.getAvailableComputers().subscribe(res => {
     //   this.floorwiseAvComputers = res.Groups;
-      
-
 
     this.timer = this.interval();
-    
-
   }
 
 
@@ -63,8 +58,8 @@ export class ComputersComponent implements OnInit {
         this.thirdFloorComputers = res.Groups[3];
         this.lowerLevelComputers = res.Groups[2];
         console.log(this.firstFloorComputers);
-      })
-    }, 20* 1000)
+      });
+    }, 20 * 1000);
     // 20 seconds timer
   }
 

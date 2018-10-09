@@ -25,6 +25,6 @@ export class LabStatsService {
    getAvailableComputers(): Observable<any> {
      return this.http.get(this.itLabsURL + this.availableComputersURL, {
       headers: new HttpHeaders().set('Authorization', 'acf442ce-27d8-406e-bbf5-98a438d13b68')
-    })
+    });
   }
 }

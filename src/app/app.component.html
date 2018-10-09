@@ -15,8 +15,8 @@
 
     </form> -->
   <!-- </nav> -->
-  <div id="mainContent" [@fadeAnimation]="o.isActivated ? o.activatedRoute: ''" class="row">
-    <!-- <div id="mainContent" [className]="'row'"> -->
+  <!-- <div id="mainContent" [@fadeAnimation]="o.isActivated ? o.activatedRoute: ''" class="row"> -->
+    <div id="mainContent" [className]="'row'">
 <router-outlet #o="outlet" (messageEvent)="receiveMessage($event)"></router-outlet>
   </div>
   
@@ -25,8 +25,7 @@
 <footer [className]="'fixed-bottom'">
   <div class="container">
     <img class="homeButton" [src]="homeButtonURL" alt="Home" routerLink="index">
-    11:49 AM <BR>
-    10/8/2018
+
     <img class="logo" [src]="logoURL" alt="Western Michigan University Libraries">
   </div>
 </footer>
