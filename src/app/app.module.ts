@@ -10,12 +10,13 @@ import { MapComponent } from './map/map.component';
 import { NewsComponent } from './news/news.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { HoursService } from './hours.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HoursService } from './hours/hours.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RoomsComponent } from './rooms/rooms.component';
 import { CalendarComponent } from './calendar/calendar.component';
 
+import { JsonpModule, Jsonp, Response } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     MapComponent,
     NewsComponent,
     RoomsComponent,
-    CalendarComponent
+    CalendarComponent,
+    JsonpModule
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,4 @@ import { CalendarComponent } from './calendar/calendar.component';
 
 // declare var $: any;
 
-export class AppModule { 
-
-}
+export class AppModule {}

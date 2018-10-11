@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-
-import { map } from 'rxjs/operators';
+// import 'rxjs/add/operator/toPromise';
+import { switchMap } from 'rxjs/operators';
+// import { toPromise } from 'rxjs/operator';
 
 // import 'rxjs/add/operator/map';
 
@@ -21,10 +22,18 @@ export class EventsService {
 
 
   private apiToken: string = null;
+
   constructor(private http: HttpClient) {
 
+    //  this.http.post(this.apiTokenURL, {
+    //   'client_id': 303,
+    //   'client_secret': 'bf62dd89e6dfc88e84c0a5839a22ac38',
+    //   'grant_type': 'client_credentials'
+    // }).subscribe(tokenData => this.token = tokenData['access_token']);
 
   }
+
+
 
     // return this.http.post(this.apiTokenURL, {
     //   'client_id': 303,
@@ -41,22 +50,22 @@ export class EventsService {
   // }
   //   ));
 
-  getToken(): Observable<any> {
+//   getToken() {
 
-    return this.http.post(this.apiTokenURL, {
-      'client_id': 303,
-      'client_secret': 'bf62dd89e6dfc88e84c0a5839a22ac38',
-      'grant_type': 'client_credentials'
-    });
-  }
-  
-  getAllEvents(): Observable<any> {
+//      this.http.post(this.apiTokenURL, {
+//       'client_id': 303,
+//       'client_secret': 'bf62dd89e6dfc88e84c0a5839a22ac38',
+//       'grant_type': 'client_credentials'
+//      }).subscribe(tokenData => this.token = tokenData['access_token']);
+//   }
 
- return this.getToken().pipe(map(token => {
-  console.log(token.access_token);
-   const headers = new HttpHeaders().set('Authorization', 'Bearer ' + token.access_token);
-   return this.http.get(this.apiURL, { headers: headers });
- }));
+//   getAllEvents(): Observable<any> {
+//     this.getToken();
+// console.log(this.token);
+//     // this.getToken();
+//    const headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.token);
+//    return this.http.get(this.apiURL, { headers: headers });
+//  }
 
 //  map(tokenData => {
 //       console.log(tokenData['access_token']);
@@ -74,7 +83,7 @@ export class EventsService {
     //   );
   }
 
-  }
+  
 
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
-import { HoursService } from '../hours.service';
+import { HoursService } from './hours.service';
 
 
 @Component({
@@ -23,13 +23,17 @@ export class HoursComponent implements OnInit {
 
   ngOnInit() {
 
-    this.hoursService.getHours('WLD').subscribe((data) => {
-      // this.hours = data[this.todaysDate][0];
-      console.log(data[this.todaysDate][0].StartHour)
-      // console.log(this.hours[this.todaysDate][0]);
+    // this.hoursService.getHours('WLD').subscribe((data) => {
+    //   // this.hours = data[this.todaysDate][0];
+    //   console.log(data[this.todaysDate][0].StartHour)
+    //   // console.log(this.hours[this.todaysDate][0]);
       
-    })
-    
+    // })
+
+    this.hoursService.getAllHours().subscribe((hrs) => {
+      this.hours = hrs;
+      console.log(hrs);
+    });
 
   }
 
