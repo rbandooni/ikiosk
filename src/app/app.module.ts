@@ -16,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { RoomsComponent } from './rooms/rooms.component';
 import { CalendarComponent } from './calendar/calendar.component';
 
-import { JsonpModule, Jsonp, Response } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -27,8 +26,7 @@ import { JsonpModule, Jsonp, Response } from '@angular/http';
     MapComponent,
     NewsComponent,
     RoomsComponent,
-    CalendarComponent,
-    JsonpModule
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

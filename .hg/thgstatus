@@ -308,7 +308,7 @@ mnode_modules/xmlbuilder/lib
 mnode_modules/xmlhttprequest-ssl
 mnode_modules/xmlhttprequest-ssl/lib
 msrc
-msrc/app
+rsrc/app
 msrc/app/computers
 msrc/app/hours
 msrc/app/index

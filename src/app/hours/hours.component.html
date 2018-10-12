@@ -2,92 +2,33 @@
 
   <div class="row">
 
-    <div class="col-lg-5">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet imperdiet eros. Phasellus nulla mauris,
-      tincidunt quis dui eu, scelerisque laoreet tellus. Donec vitae placerat purus. Proin eget orci tincidunt nunc mattis
-      auctor. Vestibulum nisl orci, iaculis sed volutpat rutrum, eleifend aliquet diam. Pellentesque id tincidunt risus, nec
-      euismod lacus. Donec efficitur lectus ex, sed porttitor nunc consectetur in. Suspendisse elementum in orci ac
-      condimentum. Vestibulum blandit velit ex, quis aliquet ligula dapibus a. Donec lacinia condimentum tellus, ut maximus
-      elit gravida sit amet. Donec a suscipit lorem. Vestibulum eget turpis finibus, tempus risus luctus, luctus diam.
+    <div class="card col-auto mb-3 mr-5" style="width: 18rem;" *ngFor="let libraries of locations?.locations">
+      <img class="card-img-top" [src]="libraries.image">
+      <div class="card-body">
+        <h5 class="card-title text-center">{{ libraries.name }}</h5>
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
       
-      Phasellus quis cursus nunc. Pellentesque eu nisi at felis vestibulum tincidunt. Pellentesque eu convallis ligula, sit
-      amet faucibus nibh. Nullam scelerisque risus et auctor maximus. Phasellus rutrum leo congue condimentum facilisis.
-      Praesent vel pharetra augue, tincidunt consequat enim. Donec congue vestibulum erat. Sed convallis tristique massa et
-      placerat. Integer mollis, odio eget placerat lacinia, neque odio imperdiet risus, in faucibus nisl erat vitae ante.
-      
-      Nam maximus odio nec mattis fringilla. Duis sit amet velit ullamcorper, ultricies ex id, cursus nibh. Duis ac dui
-      neque. Praesent lectus mauris, varius non tellus a, fringilla sollicitudin leo. Suspendisse gravida nulla lorem, eget
-      vulputate neque scelerisque in. Aliquam congue maximus odio, vel consectetur sapien viverra sed. Nullam a sem quis
-      ligula interdum tempor. Nullam pharetra neque non orci accumsan imperdiet. Nullam in auctor lectus. Vestibulum ante
-      ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-      
-      In erat dui, venenatis et est in, tristique finibus lorem. Morbi ullamcorper nisl quis placerat faucibus. Orci varius
-      natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur commodo, arcu eget consequat
-      venenatis, ligula enim porttitor tellus, vitae vulputate velit orci quis ante. Duis posuere eros vitae leo ultricies,
-      quis ullamcorper est laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt quis nisl eget
-      tristique.
-      
-      Donec in maximus eros. Vestibulum rhoncus quam non turpis fringilla, at semper risus ornare. In a scelerisque dui.
-      Maecenas mollis nisl vel nibh sollicitudin placerat. Sed nulla ante, ultrices et leo et, commodo faucibus purus. Aenean
-      vel nulla nisi. Mauris suscipit lectus sed velit auctor, a faucibus augue volutpat. Maecenas bibendum dignissim velit
-      non feugiat. Integer nibh purus, egestas in enim at, feugiat convallis urna. Nam ut mauris faucibus, rutrum ante et,
-      tincidunt augue. Nullam sagittis nisi dui, et gravida enim fringilla et. Vivamus commodo sagittis lectus, sit amet
-      sagittis odio rhoncus malesuada. Cras vehicula turpis eu elit volutpat imperdiet. Etiam ac fringilla tellus.</p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet imperdiet eros. Phasellus nulla mauris,
-        tincidunt quis dui eu, scelerisque laoreet tellus. Donec vitae placerat purus. Proin eget orci tincidunt nunc mattis
-        auctor. Vestibulum nisl orci, iaculis sed volutpat rutrum, eleifend aliquet diam. Pellentesque id tincidunt risus, nec
-        euismod lacus. Donec efficitur lectus ex, sed porttitor nunc consectetur in. Suspendisse elementum in orci ac
-        condimentum. Vestibulum blandit velit ex, quis aliquet ligula dapibus a. Donec lacinia condimentum tellus, ut maximus
-        elit gravida sit amet. Donec a suscipit lorem. Vestibulum eget turpis finibus, tempus risus luctus, luctus diam.
-        
-        Phasellus quis cursus nunc. Pellentesque eu nisi at felis vestibulum tincidunt. Pellentesque eu convallis ligula, sit
-        amet faucibus nibh. Nullam scelerisque risus et auctor maximus. Phasellus rutrum leo congue condimentum facilisis.
-        Praesent vel pharetra augue, tincidunt consequat enim. Donec congue vestibulum erat. Sed convallis tristique massa et
-        placerat. Integer mollis, odio eget placerat lacinia, neque odio imperdiet risus, in faucibus nisl erat vitae ante.
-        
-        Nam maximus odio nec mattis fringilla. Duis sit amet velit ullamcorper, ultricies ex id, cursus nibh. Duis ac dui
-        neque. Praesent lectus mauris, varius non tellus a, fringilla sollicitudin leo. Suspendisse gravida nulla lorem, eget
-        vulputate neque scelerisque in. Aliquam congue maximus odio, vel consectetur sapien viverra sed. Nullam a sem quis
-        ligula interdum tempor. Nullam pharetra neque non orci accumsan imperdiet. Nullam in auctor lectus. Vestibulum ante
-        ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-        
-        In erat dui, venenatis et est in, tristique finibus lorem. Morbi ullamcorper nisl quis placerat faucibus. Orci varius
-        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur commodo, arcu eget consequat
-        venenatis, ligula enim porttitor tellus, vitae vulputate velit orci quis ante. Duis posuere eros vitae leo ultricies,
-        quis ullamcorper est laoreet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt quis nisl eget
-        tristique.
-        
-        Donec in maximus eros. Vestibulum rhoncus quam non turpis fringilla, at semper risus ornare. In a scelerisque dui.
-        Maecenas mollis nisl vel nibh sollicitudin placerat. Sed nulla ante, ultrices et leo et, commodo faucibus purus. Aenean
-        vel nulla nisi. Mauris suscipit lectus sed velit auctor, a faucibus augue volutpat. Maecenas bibendum dignissim velit
-        non feugiat. Integer nibh purus, egestas in enim at, feugiat convallis urna. Nam ut mauris faucibus, rutrum ante et,
-        tincidunt augue. Nullam sagittis nisi dui, et gravida enim fringilla et. Vivamus commodo sagittis lectus, sit amet
-        sagittis odio rhoncus malesuada. Cras vehicula turpis eu elit volutpat imperdiet. Etiam ac fringilla tellus.
-      </p>
-
-<!-- <a class="btn btn-lg btn-success" routerLink="/">Home</a> -->
-
-      <!-- <h2 class="pushBottom">This Week</h2> -->
-      <!-- <ul class="list-group list-group-flush pushBottom">
-        <li class="list-group-item"><p>{{ 'Waldo Library' }}</p></li>
-        <<li *ngFor="let hour of hours; let i = index" class="list-group-item"> -->
-          <!-- <p *ngIf=" hour.StartHour !== null; else noHoursAvailable"> -->
-            <!-- {{ hour.Weekday }} {{ hour.StartHour }} - {{ hour.EndHour }} -->
-          <!-- </p> -->
-          <!-- <ng-template #noHoursAvailable> -->
-           <!-- {{ hour.Weekday }} -  No Hours Available   -->
-          <!-- </ng-template> -->
-        <!-- </li> 
+      <!-- <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
       </ul> -->
-        <!-- <div id="arrow" class="col-lg-6 animated slideOutRight">
-          <img src="/assets/images/arrow-right.png" alt="">
-        </div> -->
+      
+      <table class="table table-responsive">
+        <!-- <thead>
+          <tr>
+            <th></th>
+          </tr>
+        </thead> -->
+        <tbody>
+          <tr>
+            <td>Sunday</td>
+           
+          </tr>
+        </tbody>
+      </table>
+
+      
     </div>
-    <!-- <div class="col-lg-8" class="pageTitle"><h1> {{title | uppercase }} </h1></div> -->
-    <div class="col-lg-7">
-      <!-- <iframe src="https://hours.library.wmich.edu/preview.php" scrolling="no" frameborder="0" style="width: 100%; border: none; overflow: hidden; height: 550px; background-color: white;"></iframe> -->
-    </div>
+
 
   </div>
 
