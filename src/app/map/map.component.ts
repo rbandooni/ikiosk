@@ -11,8 +11,8 @@ export class MapComponent implements OnInit {
 
   constructor() { }
 
-  thumb = "http://placehold.it/500x500";
-  full = "http://placehold.it/1000x1000";
+  thumb = "https://placehold.it/500x500";
+  full = "https://placehold.it/1000x1000";
   ngOnInit() {
   }
 
