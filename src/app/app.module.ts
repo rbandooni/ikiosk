@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RoomsComponent } from './rooms/rooms.component';
 import { CalendarComponent } from './calendar/calendar.component';
 
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     AppRoutingModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxImageZoomModule.forRoot()
   ],
   providers: [HoursService],
   bootstrap: [AppComponent]
