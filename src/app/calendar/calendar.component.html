@@ -4,14 +4,33 @@
 
     <!-- <div class="col-lg-12">
  <div *ngFor="let event of eventsList?.events" class="col-md-3">{{event.title}}</div> -->
-    <div class="card col-auto mr-5" style="width: 18rem;" *ngFor="let event of eventsList?.events">
+    <!-- <div class="card col-auto mr-5" style="width: 18rem;" *ngFor="let event of eventsList?.events">
       <div class="card-body">
         <h5 class="card-title">{{event.title}}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{event.location.name}}</h6>
         <p class="card-text" [innerHTML]="event.description"></p>
-        <!-- <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a> -->
+         <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
       </div>
+    </div> -->
+
+    <!-- <div class="col-md-3 col-sm-4 eventGrid" *ngFor="let event of eventsList?.events"></div> -->
+
+    <div class="card-columns">
+      <div class="card" *ngFor="let event of eventsList?.events; let i = index">
+        <!-- https://source.unsplash.com/1600x900/?nature,water -->
+        <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water" alt="Card image cap" *ngIf=" i === 1">
+        <img class="card-img-top" src="https://source.unsplash.com/1600x900/?geometric" alt="Card image cap" *ngIf=" i === 2">
+        <img class="card-img-top" src="https://source.unsplash.com/1600x900/?isometric" alt="Card image cap" *ngIf=" i === 3">
+        <div class="card-block">
+          <h4 class="card-title">Card title</h4>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+            This content is a little bit longer.</p>
+        </div>
+
+      </div>
+
+
     </div>
 
 </div>

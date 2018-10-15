@@ -18,6 +18,8 @@ import { CalendarComponent } from './calendar/calendar.component';
 
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 
+import { ImageViewerModule } from '@hallysonh/ngx-imageviewer';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,8 @@ import { NgxImageZoomModule } from 'ngx-image-zoom';
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     HttpClientModule,
-    NgxImageZoomModule.forRoot()
+    NgxImageZoomModule.forRoot(),
+    ImageViewerModule
   ],
   providers: [HoursService],
   bootstrap: [AppComponent]
