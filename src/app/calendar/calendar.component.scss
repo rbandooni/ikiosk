@@ -1,13 +1,50 @@
-// .eventGrid {
-//     background: url('https://source.unsplash.com/1600x900/?nature,water');
-//     background-size: cover;
-//     height: 300px;
-//     padding: 2em;
-// }
-
-.routeContainer {
-    .row {
-        height: 90vh;
-        
+$dict: vector event library gradient study scenic;
+// =eventsGrid
+//     @each $var in $dict {
+//         .eventGrid
+//             background: image-url('https://source.unsplash.com/1600x900/?#{$var}')
+//             background-size: cover
+//     }
+.eventGrid {
+    position: relative; // top: 50%;
+    // transform: translateY(-50%);
+    // background: url('/assets/images/eventBg.jpg');
+    background-size: cover;
+    color: white;
+    height: 200px;
+    transform: skewX(-10%);
+    h4,
+    p {
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
     }
 }
+
+$i: 0;
+@each $var in $dict {
+    .eventGrid.grid#{$i} {
+        background-image: url('https://source.unsplash.com/1600x900/?#{$var}');
+        background-size: cover
+    }
+    $i: $i+1;
+}
+
+// @for $i from 0 through length($dict) {
+//     .eventGrid.grid#{$i} {
+//         background-image: url('https://source.unsplash.com/1600x900/?#{$dict}');
+//         background-size: cover
+//     }
+// }
+// .routeContainer {
+//     .row {
+//         // height: 90vh;
+//     }
+// }
