@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { fadeAnimation } from "./animations";
+import { fadeAnimation } from './animations';
+
+import { UserIdleService } from 'angular-user-idle';
 
 @Component({
   selector: 'app-root',
@@ -14,20 +16,63 @@ export class AppComponent implements OnInit {
   // Horizontal logo
   // logoURL: string = "/assets/images/Univ Libraries horz_gold and white.svg"
 
-  homeButtonURL: string = '/assets/images/home.svg';
+  homeButtonURL = '/assets/images/home.svg';
   // Stacked logo
-  logoURL: string = "/assets/images/W-gold-black.svg";
+  logoURL = '/assets/images/W-gold-black.svg';
   // Old logo
   // logoURL: string = "assets/images/ikiosk-logo.svg";
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  formattedDate: string;
+  formattedTime: string;
+  constructor(private router: Router, private route: ActivatedRoute, private userIdle: UserIdleService) {
     // this.route = this.router.url;
-    var snapshot = route.snapshot;
+    // var snapshot = route.snapshot;
     // console.log(snapshot.component.toString());
   }
 
   ngOnInit() {
-    this.route.url.subscribe(url => console.log(url[0].path));
+
+    const today = new Date();
+    const dd = today.getDate();
+    const mm = today.getMonth() + 1;
+    const yyyy = today.getFullYear();
+
+    this.formattedTime = today.toLocaleString('en-US', {
+      hour12: true,
+      minute: 'numeric',
+      hour: 'numeric'
+    });
+
+    this.formattedDate = mm + '/' + dd + '/' + yyyy;
+
+
+    this.userIdle.startWatching();
+    this.userIdle.onTimerStart().subscribe(count => {
+      console.log('Count', count);
+
+    });
+
+    // this.route.url.subscribe(url => console.log(url[0].path));
+
+    this.userIdle.onTimeout().subscribe(() => {
+      console.log('Timeout!');
+      this.router.navigate(['index']);
+    });
+  }
+  stop() {
+    this.userIdle.stopTimer();
+  }
+
+  stopWatching() {
+    this.userIdle.stopWatching();
+  }
+
+  startWatching() {
+    this.userIdle.startWatching();
+  }
+
+  restart() {
+    this.userIdle.resetTimer();
   }
 
   receiveMessage($event) {

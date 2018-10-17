@@ -23,10 +23,11 @@
 </div>
 
 <footer [className]="'fixed-bottom'">
-  <div class="container">
-    <img class="homeButton" [src]="homeButtonURL" alt="Home" routerLink="index">
-   <div class="timeContainer" style="display: inline;position: relative;float: right;"> <p style="margin-bottom: 0px;">12:45 AM</p> <p>10/16/2018</p></div>
+  <div class="container-fluid">
     <img class="logo" [src]="logoURL" alt="Western Michigan University Libraries">
+    <img class="homeButton" [src]="homeButtonURL" alt="Home" routerLink="index">
+   <div class="timeContainer" style="display: inline;position: relative;float: right;"> <p style="margin-bottom: 0px;">{{ formattedTime }}</p> <p>{{ formattedDate }}</p></div>
+   
   </div>
 </footer>
 

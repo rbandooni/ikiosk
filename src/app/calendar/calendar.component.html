@@ -1,91 +1,35 @@
 <div class="routeContainer">
 
-  <div class="row">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Open modal
-</button>
-
-<!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        Modal body..
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-
+  <!-- <div class="row filterRow">
+    <div class="col-md-12">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">All Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Category 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Catregory 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
     </div>
-  </div>
-</div>
-    <!-- <div class="col-lg-12">
- <div *ngFor="let event of eventsList?.events" class="col-md-3">{{event.title}}</div> -->
-    <!-- <div class="card col-auto mr-5" style="width: 18rem;" *ngFor="let event of eventsList?.events">
-      <div class="card-body">
-        <h5 class="card-title">{{event.title}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{event.location.name}}</h6>
-        <p class="card-text" [innerHTML]="event.description"></p>
-         <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div> -->
 
-    <!-- <div class="col-md-3 col-sm-4 eventGrid" *ngFor="let event of eventsList?.events"></div> -->
+  </div> -->
+  <div class="row mt-2">
 
-    <!-- <div class="card-columns">
-      <div class="card" *ngFor="let event of eventsList?.events; let i = index">
-        <img class="card-img-top" src="https://source.unsplash.com/1600x900/?nature,water" alt="Card image cap" *ngIf=" i === 1">
-        <img class="card-img-top" src="https://source.unsplash.com/1600x900/?geometric" alt="Card image cap" *ngIf=" i === 2">
-        <img class="card-img-top" src="https://source.unsplash.com/1600x900/?isometric" alt="Card image cap" *ngIf=" i === 3">
-        <div class="card-block">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-            This content is a little bit longer.</p>
-        </div>
-
-      </div>
-
-
-    </div> -->
-    <div class="col-md-9">
-      <div class="row">
-    <div class="col-md-4 mb-3" *ngFor="let event of eventsList?.events; let i = index" >
-      <div [class]="'eventGrid grid'+i" data-toggle="modal" data-target="#exampleModal">
+    <div class="col-md-12">
+      <div class="row grid">
+    <div class="col-md-4 mb-3 gridParent" *ngFor="let event of eventsList?.events; let i = index" >
+      <div [class]="'eventGrid grid'+i" (tap)="eventModal(event.id)">
         <div class="overlay"></div>
         <h4 class="text-center">{{ event.title }}</h4>
+        <p class="text-strong">{{ event.start | date }} {{ event.start | date:'shortTime' }}</p>
         <p class="text-strong">{{ event.location.name }}</p>
-      </div>
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
+        
       </div>
     
     </div>
@@ -93,11 +37,7 @@
 
     </div>
 
-    <div class="col-md-3">
-      <div class="row">
-
-      </div>
-    </div>
     
 
+</div>
 </div>

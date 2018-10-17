@@ -16,9 +16,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { RoomsComponent } from './rooms/rooms.component';
 import { CalendarComponent } from './calendar/calendar.component';
 
-import { NgxImageZoomModule } from 'ngx-image-zoom';
+// import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 import { ImageViewerModule } from '@hallysonh/ngx-imageviewer';
+
+import { UserIdleModule } from 'angular-user-idle';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -37,8 +40,10 @@ import { ImageViewerModule } from '@hallysonh/ngx-imageviewer';
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     HttpClientModule,
-    NgxImageZoomModule.forRoot(),
-    ImageViewerModule
+    // NgxImageZoomModule.forRoot(),
+    ImageViewerModule,
+    // if user is idle for 100 sec, start timer for 20 sec and ping every 1 sec
+    UserIdleModule.forRoot({idle: 100, timeout: 20, ping: 1}),
   ],
   providers: [HoursService],
   bootstrap: [AppComponent]

@@ -28,7 +28,7 @@ footer {
     vertical-align: middle;
     text-align: center;
     box-shadow: inset 0 0px rgba(255, 255, 255, 0.2), inset 0 -35px 11px rgba(0, 0, 0, 0.4), 0 -1px 12px rgba(0, 0, 0, 0.5);
-    .container {
+    .container-fluid {
         img.homeButton {
             height: 40px;
             border-radius: 50%;
@@ -38,7 +38,7 @@ footer {
             outline: 0;
         }
         img.logo {
-            position: fixed;
+            position: relative;
             right: 0;
             bottom: 4px;
             float: left;
