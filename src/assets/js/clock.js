@@ -30,6 +30,10 @@ function showModal(evt) {
 
 }
 
+function getHours(weeks) {
+
+}
+
 // for final prod build
 // document.body.style.cursor = 'none';
 
