@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
 
@@ -32,10 +32,11 @@ export class CalendarComponent implements OnInit {
 
   constructor(private router: Router, private events: EventsService, private http:HttpClient) {}
 
-
+@Output() reloadEvent = new EventEmitter();
 
   ngOnInit() {
     this.getEvents();
+
   }
 
   getEvents() {
@@ -78,11 +79,12 @@ export class CalendarComponent implements OnInit {
   eventModal(id: number) {
 
     this.getEvent(id);
+    // window.localStorage.setItem('ModalWindow', 'true');
     // this.modalEventData = this.eventsList.events.filter(function(i) {
     //   return i.id = id;
     // });
 
-    
+
     console.log('showModal run');
   }
 

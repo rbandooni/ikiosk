@@ -77,6 +77,7 @@ export class HoursComponent implements OnInit {
   }
 
   calcCurrentWeekIndex() {
+    this
     // console.log(weekArr)
   }
   backToHome() {

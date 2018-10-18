@@ -24,7 +24,8 @@ function showModal(evt) {
         html: evt.events[0].description,
         // showCloseButton: true,
         confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
-        customClass: 'animated jello swal-wide'
+        customClass: 'animated jello swal-wide',
+        timer: 20 * 1000
     })
 
 }

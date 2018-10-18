@@ -1,4 +1,4 @@
-$dict: vector event library gradient study scenic pattern nature panoramic;
+$dict: vector event library landscape virtual scenic pattern nature panoramic;
 // =eventsGrid
 //     @each $var in $dict {
 //         .eventGrid
@@ -31,8 +31,13 @@ $dict: vector event library gradient study scenic pattern nature panoramic;
 $i: 0;
 @each $var in $dict {
     .eventGrid.grid#{$i} {
-        background-image: url('https://source.unsplash.com/1600x900/?#{$var}');
-        background-size: cover
+        background-image: url('https://source.unsplash.com/600x200/?#{$var}');
+        background-size: cover;
+        box-shadow: 0 5px 6px #2d2d2d;
+        transition: all 0.2s linear;
+        &:hover {
+            filter: sepia(80%);
+        }
     }
     $i: $i+1;
 }

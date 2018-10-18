@@ -13,6 +13,7 @@ import { UserIdleService } from 'angular-user-idle';
 export class AppComponent implements OnInit {
   title = 'iKiosk';
   routeInfo: string;
+  // timer: any;
   // Horizontal logo
   // logoURL: string = "/assets/images/Univ Libraries horz_gold and white.svg"
 
@@ -59,6 +60,21 @@ export class AppComponent implements OnInit {
       this.router.navigate(['index']);
     });
   }
+
+  // interval() {
+  //   return setInterval(() => {
+  //     if (window.localStorage.getItem('ModalWindow') == 'true') {
+  //       this.startWatching();
+  //       this.userIdle.onTimeout().subscribe(() => {
+  //         console.log('Timeout!');
+  //         this.router.navigate(['index']);
+  //         // delete localStorage
+  //         window.localStorage.setItem('ModalWindow', 'false');
+  //         // close swal ? 
+  //       });
+  //     }
+  //   }, 10 * 1000);
+  // }
   stop() {
     this.userIdle.stopTimer();
   }

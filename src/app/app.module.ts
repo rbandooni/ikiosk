@@ -42,8 +42,8 @@ import { UserIdleModule } from 'angular-user-idle';
     HttpClientModule,
     // NgxImageZoomModule.forRoot(),
     ImageViewerModule,
-    // if user is idle for 100 sec, start timer for 20 sec and ping every 1 sec
-    UserIdleModule.forRoot({idle: 100, timeout: 20, ping: 1}),
+    // if user is idle for 30 sec, start timer for 20 sec and ping every 1 sec
+    UserIdleModule.forRoot({idle: 10, timeout: 10, ping: 1}),
   ],
   providers: [HoursService],
   bootstrap: [AppComponent]
