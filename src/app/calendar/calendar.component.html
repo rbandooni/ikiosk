@@ -26,7 +26,7 @@
     <div class="col-md-4 mb-3 gridParent" *ngFor="let event of eventsList?.events; let i = index" >
       <div [class]="'eventGrid grid'+i" (tap)="eventModal(event.id)">
         <div class="overlay"></div>
-        <h4 class="text-center">{{ event.title }}</h4>
+        <h4 class="text-center" style="font-size: 1.3rem;font-weight: 600;">{{ event.title }}</h4>
         <p class="text-strong">{{ event.start | date }} {{ event.start | date:'shortTime' }}</p>
         <p class="text-strong">{{ event.location.name }}</p>
         

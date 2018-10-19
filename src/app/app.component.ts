@@ -33,21 +33,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 
-    const today = new Date();
-    const dd = today.getDate();
-    const mm = today.getMonth() + 1;
-    const yyyy = today.getFullYear();
-
-    this.formattedTime = today.toLocaleString('en-US', {
-      hour12: true,
-      minute: 'numeric',
-      hour: 'numeric'
-    });
-
-    this.formattedDate = mm + '/' + dd + '/' + yyyy;
-
-
-    this.userIdle.startWatching();
+    this.timeInterval();
+    // console.log('URL', this.router.url);
     this.userIdle.onTimerStart().subscribe(count => {
       console.log('Count', count);
 
@@ -57,24 +44,22 @@ export class AppComponent implements OnInit {
 
     this.userIdle.onTimeout().subscribe(() => {
       console.log('Timeout!');
-      this.router.navigate(['index']);
+      if (this.router.url !== '/') {
+        console.log('not index!');
+        this.router.navigate(['index']);
+      }
+      else {
+        console.log('page reload deferred');
+      }
     });
   }
 
-  // interval() {
-  //   return setInterval(() => {
-  //     if (window.localStorage.getItem('ModalWindow') == 'true') {
-  //       this.startWatching();
-  //       this.userIdle.onTimeout().subscribe(() => {
-  //         console.log('Timeout!');
-  //         this.router.navigate(['index']);
-  //         // delete localStorage
-  //         window.localStorage.setItem('ModalWindow', 'false');
-  //         // close swal ? 
-  //       });
-  //     }
-  //   }, 10 * 1000);
-  // }
+  timeInterval() {
+    return setInterval(() => {
+      this.timeFormatter();
+      // console.log('time formatter interval');
+    }, 1 * 1000);
+  }
   stop() {
     this.userIdle.stopTimer();
   }
@@ -99,6 +84,23 @@ export class AppComponent implements OnInit {
   backToHome() {
     // console.log()
     this.router.navigate(['/index']);
+  }
+
+  timeFormatter() {
+    const today = new Date();
+    const dd = today.getDate();
+    const mm = today.getMonth() + 1;
+    const yyyy = today.getFullYear();
+
+    this.formattedTime = today.toLocaleString('en-US', {
+      hour12: true,
+      minute: 'numeric',
+      hour: 'numeric'
+    });
+
+    this.formattedDate = mm + '/' + dd + '/' + yyyy;
+
+
   }
 
 }

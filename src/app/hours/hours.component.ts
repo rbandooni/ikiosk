@@ -41,28 +41,18 @@ export class HoursComponent implements OnInit {
     $.getJSON('https://ikioskdev.library.wmich.edu/api/hours/libcal.php?weeks=1', function (data) {
       // console.log(data);
       this.locations = data;
+      // console.log('this.locations before then', this.locations);
+      return data;
+    }).then(function(data) {
+      console.log('this.locations after then', this.locations);
+      this.afterInit();
     });
+
+    // console.log('this.locations after getjson', this.locations);
+
+    
     // this.locations = getHours(1);
 
-    this.now = new Date();
-    this.onejan = new Date(this.now.getFullYear(), 0, 1);
-    this.weekNumber = Math.ceil((((this.now - this.onejan) / 86400000) + this.onejan.getDay() + 1) / 7);
-    // this.locations = JSON.parse(this.locations);
-  
-    console.log(this.locations['locations'][2]);
-
-    this.locations['locations'][0].image = '/assets/images/hours/waldo.jpg';
-    this.locations['locations'][1].image = '/assets/images/hours/swain.jpg';
-    this.locations['locations'][2].image = '/assets/images/hours/maybee.jpg';
-
-    this.waldo.hours.thisWeek = this.locations['locations'][0].weeks[0];
-    this.maybee.hours.thisWeek = this.locations['locations'][2].weeks[0];
-    // this.waldo.hours = this.locations['locations'][0].weeks[0];
-
-    // this.waldo['hours'] = Array.of(this.waldo['hours'][0]);
-    console.log(this.waldo.hours);
-    console.log('todays weeknum', this.weekNumber)
-    console.log('waldo.hours.monday.rendered', this.waldo.hours.thisWeek['Monday'].rendered);
 
     // this.calcCurrentWeekIndex(this.locations['locations'][0].weeks);
     // this.waldo = this.locations['locations'][0];
@@ -85,10 +75,32 @@ export class HoursComponent implements OnInit {
 
   }
 
-  calcCurrentWeekIndex() {
-    this
-    // console.log(weekArr)
+  afterInit() {
+
+    this.now = new Date();
+    this.onejan = new Date(this.now.getFullYear(), 0, 1);
+    this.weekNumber = Math.ceil((((this.now - this.onejan) / 86400000) + this.onejan.getDay() + 1) / 7);
+    // this.locations = JSON.parse(this.locations);
+
+    // console.log(this.locations['locations'][2]);
+    console.log(this.locations)
+    this.locations['locations'][0].image = '/assets/images/hours/waldo.jpg';
+    this.locations['locations'][1].image = '/assets/images/hours/swain.jpg';
+    this.locations['locations'][2].image = '/assets/images/hours/maybee.jpg';
+
+    this.waldo.hours.thisWeek = this.locations['locations'][0].weeks[0];
+    this.maybee.hours.thisWeek = this.locations['locations'][2].weeks[0];
+    // this.waldo.hours = this.locations['locations'][0].weeks[0];
+
+    // this.waldo['hours'] = Array.of(this.waldo['hours'][0]);
+    console.log(this.waldo.hours);
+    console.log('todays weeknum', this.weekNumber)
+    console.log('waldo.hours.monday.rendered', this.waldo.hours.thisWeek['Monday'].rendered);
   }
+  // calcCurrentWeekIndex() {
+  //   this
+  //   // console.log(weekArr)
+  // }
   backToHome() {
     this.router.navigate(['/index']);
   }
