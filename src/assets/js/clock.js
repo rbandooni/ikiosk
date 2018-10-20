@@ -11,10 +11,9 @@ $(function(){
 
     $(".swal2-popup #swal2-content p>a").click(function (e) { e.preventDefault(); console.log('link stopped') });
 
-    $("#newsModal a").click(function(e) {
-        e.preventDefault();
-        console.log('a clicked');
-      });
+    // $("#eventsModal a, #newsModal a").click(function(e) {
+    //     e.preventDefault();
+    //   });
 
 })
 
