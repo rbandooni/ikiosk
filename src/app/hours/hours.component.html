@@ -5,10 +5,133 @@
     <div class="col-md-12">
       <div class="row">
         <div class="col-md-4">
-          <h4>This Week</h4>
+          <div class="card md-auto">
+            <img class="card-img-top" [src]="waldo.image" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{ waldo.name }}</h5>
+              <table class="table table-hover">
+                <tbody>
+                  <tr [className]="this.today === 'Monday' ? 'today' : ''"> 
+                    <td>Monday</td>
+                    <td> {{ waldo.hrs.Monday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Tuesday' ? 'today' : ''"> 
+                    <td>Tuesday</td>
+                    <td> {{ waldo.hrs.Tuesday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Wednesday' ? 'today' : ''"> 
+                    <td>Wednesday</td>
+                    <td> {{ waldo.hrs.Wednesday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Thursday' ? 'today' : ''"> 
+                    <td>Thursday</td>
+                    <td> {{ waldo.hrs.Thursday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Friday' ? 'today' : ''"> 
+                    <td>Friday</td>
+                    <td> {{ waldo.hrs.Friday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Saturday' ? 'today' : ''"> 
+                    <td>Saturday</td>
+                    <td> {{ waldo.hrs.Saturday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Sunday' ? 'today' : ''"> 
+                    <td>Sunday</td>
+                    <td> {{ waldo.hrs.Sunday.rendered}}</td> 
+                  </tr>
+                </tbody>
+              </table>
+              <!-- <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let hours of waldo.weeks">Cras justo odio</li>
+                <li class="list-group-item">Sunday {{ waldo.hrs.Sunday.rendered }}</li>
+              </ul> -->
+            </div>
+
+            <!-- <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div> -->
+          </div>
         </div>
-        <div class="col-md-8">
-          <h4>This Semester</h4>
+        <div class="col-md-4">
+          <div class="card md-auto">
+            <img class="card-img-top" [src]="maybee.image" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{  maybee.name }}</h5>
+              <table class="table table-hover">
+                <tbody>
+                  <tr [className]="this.today === 'Monday' ? 'today' : ''"> 
+                    <td>Monday</td>
+                    <td> {{ maybee.hrs.Monday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Tuesday' ? 'today' : ''"> 
+                    <td>Tuesday</td>
+                    <td> {{ maybee.hrs.Tuesday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Wednesday' ? 'today' : ''"> 
+                    <td>Wednesday</td>
+                    <td> {{ maybee.hrs.Wednesday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Thursday' ? 'today' : ''"> 
+                    <td>Thursday</td>
+                    <td> {{ maybee.hrs.Thursday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Friday' ? 'today' : ''"> 
+                    <td>Friday</td>
+                    <td> {{ maybee.hrs.Friday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Saturday' ? 'today' : ''"> 
+                    <td>Saturday</td>
+                    <td> {{ maybee.hrs.Saturday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Sunday' ? 'today' : ''"> 
+                    <td>Sunday</td>
+                    <td> {{ maybee.hrs.Sunday.rendered}}</td> 
+                  </tr>
+                </tbody>
+              </table>  
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card md-auto" >
+            <img class="card-img-top" [src]="swain.image" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{ swain.name }}</h5>
+              <table class="table table-hover">
+                <tbody>
+                  <tr [className]="this.today === 'Monday' ? 'today' : ''"> 
+                    <td>Monday</td>
+                    <td> {{ swain.hrs.Monday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Tuesday' ? 'today' : ''"> 
+                    <td>Tuesday</td>
+                    <td> {{ swain.hrs.Tuesday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Wednesday' ? 'today' : ''"> 
+                    <td>Wednesday</td>
+                    <td> {{ swain.hrs.Wednesday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Thursday' ? 'today' : ''"> 
+                    <td>Thursday</td>
+                    <td> {{ swain.hrs.Thursday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Friday' ? 'today' : ''"> 
+                    <td>Friday</td>
+                    <td> {{ swain.hrs.Friday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Saturday' ? 'today' : ''"> 
+                    <td>Saturday</td>
+                    <td> {{ swain.hrs.Saturday.rendered}}</td> 
+                  </tr>
+                  <tr [className]="this.today === 'Sunday' ? 'today' : ''"> 
+                    <td>Sunday</td>
+                    <td> {{ swain.hrs.Sunday.rendered}}</td> 
+                  </tr>
+                </tbody>
+              </table> 
+            </div>
+
         </div>
       </div>
     </div>

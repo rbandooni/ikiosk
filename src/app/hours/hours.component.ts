@@ -21,10 +21,39 @@ export class HoursComponent implements OnInit {
   hours: any[];
   todaysDate = new Date().toISOString().slice(0, 10);
 
-  locations: any;
-  waldo = {hours:{ thisWeek: {}}};
-  swain = { hours: { thisWeek: {}}};
-  maybee = { hours: { thisWeek: {}}};
+  locations: object;
+  waldo = {
+    "image": "", 
+    "hrs": {
+      "Sunday":"",
+      "Monday":"",
+      "Tuesday":"",
+      "Wednesday": "",
+      "Thursday": "",
+      "Friday": "",
+      "Saturday": ""
+    }
+  };
+  swain = {"image": "", "hrs": {
+    "Sunday":"",
+    "Monday":"",
+    "Tuesday":"",
+    "Wednesday": "",
+    "Thursday": "",
+    "Friday": "",
+    "Saturday": ""
+  }};
+  maybee = {
+    "image": "",
+    "hrs": {
+    "Sunday":"",
+    "Monday":"",
+    "Tuesday":"",
+    "Wednesday": "",
+    "Thursday": "",
+    "Friday": "",
+    "Saturday": ""
+  }};
 
   weekNumber: number;
   now: any;
@@ -35,18 +64,111 @@ export class HoursComponent implements OnInit {
     this.messageEvent.emit(this.router.url);
 
    }
-
+   hrsKeys;
+   today;
   ngOnInit() {
 
-    $.getJSON('https://ikioskdev.library.wmich.edu/api/hours/libcal.php?weeks=1', function (data) {
-      // console.log(data);
-      this.locations = data;
-      // console.log('this.locations before then', this.locations);
-      return data;
-    }).then(function(data) {
-      console.log('this.locations after then', this.locations);
-      this.afterInit();
+    this.hoursService.getAllHours().subscribe((hrs) => {
+      console.log(hrs);
+      // this.locations = hrs;
+
+    this.now = new Date();
+    var dateDay = this.now.getDay();
+    // console.log(date);
+    switch(dateDay) {
+      case 1: this.today = 'Monday'; break;
+      case 2: this.today = 'Tuesday'; break;
+      case 3: this.today = 'Wednesday'; break;
+      case 4: this.today = 'Thursday'; break;
+      case 5: this.today = 'Friday'; break;
+      case 6: this.today = 'Saturday'; break;
+      case 0: this.today = 'Sunday'; break;
+    }
+    this.onejan = new Date(this.now.getFullYear(), 0, 1);
+    this.weekNumber = Math.ceil((((this.now - this.onejan) / 86400000) + this.onejan.getDay() + 1) / 7);
+
+    console.log('now', this.now);
+    console.log('onejan', this.onejan);
+    console.log('weekno', this.weekNumber);
+    // this.waldo = this.locations['locations'][0];
+    // this.swain = this.locations['locations'][1];
+    // this.maybee = this.locations['locations'][2];
+
+    Object.assign(this.waldo, hrs['locations'][0]);
+    Object.assign(this.swain, hrs['locations'][1]);
+    Object.assign(this.maybee, hrs['locations'][2]);
+    Object.assign(this.waldo.hrs.Sunday, hrs['locations'][0].weeks[0]['Sunday']);
+    this.waldo.hrs.Sunday = hrs['locations'][0].weeks[0]['Sunday'];
+    this.waldo.hrs.Monday = hrs['locations'][0].weeks[0]['Monday'];
+    this.waldo.hrs.Tuesday = hrs['locations'][0].weeks[0]['Tuesday'];
+    this.waldo.hrs.Wednesday = hrs['locations'][0].weeks[0]['Wednesday'];
+    this.waldo.hrs.Thursday = hrs['locations'][0].weeks[0]['Thursday'];
+    this.waldo.hrs.Friday = hrs['locations'][0].weeks[0]['Friday'];
+    this.waldo.hrs.Saturday = hrs['locations'][0].weeks[0]['Saturday'];
+    // Object.assign(this.maybee.hrs, hrs['locations'][2].weeks[0]);
+    // this.maybee.hrs = JSON.parse(hrs['locations'][2].weeks[0]);
+    this.swain.hrs.Sunday = hrs['locations'][1].weeks[0]['Sunday'];
+    this.swain.hrs.Monday = hrs['locations'][1].weeks[0]['Monday'];
+    this.swain.hrs.Tuesday = hrs['locations'][1].weeks[0]['Tuesday'];
+    this.swain.hrs.Wednesday = hrs['locations'][1].weeks[0]['Wednesday'];
+    this.swain.hrs.Thursday = hrs['locations'][1].weeks[0]['Thursday'];
+    this.swain.hrs.Friday = hrs['locations'][1].weeks[0]['Friday'];
+    this.swain.hrs.Saturday = hrs['locations'][1].weeks[0]['Saturday'];
+    // var obj = hrs.reduce(function(acc, cur, i) {
+    //   acc[i] = cur;
+    //   return acc;
+    // }, {});
+    // console.log(obj);
+    this.maybee.hrs.Sunday = hrs['locations'][2].weeks[0]['Sunday'];
+    this.maybee.hrs.Monday = hrs['locations'][2].weeks[0]['Monday'];
+    this.maybee.hrs.Tuesday = hrs['locations'][2].weeks[0]['Tuesday'];
+    this.maybee.hrs.Wednesday = hrs['locations'][2].weeks[0]['Wednesday'];
+    this.maybee.hrs.Thursday = hrs['locations'][2].weeks[0]['Thursday'];
+    this.maybee.hrs.Friday = hrs['locations'][2].weeks[0]['Friday'];
+    this.maybee.hrs.Saturday = hrs['locations'][2].weeks[0]['Saturday'];
+
+    this.waldo.image = '/assets/images/hours/waldo.jpg';
+    this.swain.image = '/assets/images/hours/swain.jpg';
+    this.maybee.image = '/assets/images/hours/maybee.jpg';
+
+    // this.hrsKeys = Object.keys(this.waldo.hrs);
+    // this.locations = JSON.parse(this.locations);
+    //     this.locations['locations'][0].image = '/assets/images/hours/waldo.jpg';
+    // this.locations['locations'][1].image = '/assets/images/hours/swain.jpg';
+    // this.locations['locations'][2].image = '/assets/images/hours/maybee.jpg';
+    console.log(this.maybee);
     });
+
+
+    // $.getJSON('https://ikioskdev.library.wmich.edu/api/hours/libcal.php?weeks=1', function (data) {
+    //   // console.log(data);
+    //   this.locations = data;
+    //   // console.log('this.locations before then', this.locations);
+    //   return data;
+    // }).then(function(data) {
+    //   console.log('this.locations after then', this.locations);
+    //   // this.afterInit();
+
+    // this.now = new Date();
+    // this.onejan = new Date(this.now.getFullYear(), 0, 1);
+    // this.weekNumber = Math.ceil((((this.now - this.onejan) / 86400000) + this.onejan.getDay() + 1) / 7);
+    // // this.locations = JSON.parse(this.locations);
+
+    // // console.log(this.locations['locations'][2]);
+    // console.log(this.locations)
+    // this.locations['locations'][0].image = '/assets/images/hours/waldo.jpg';
+    // this.locations['locations'][1].image = '/assets/images/hours/swain.jpg';
+    // this.locations['locations'][2].image = '/assets/images/hours/maybee.jpg';
+
+    // this.waldo.hours.thisWeek = this.locations['locations'][0].weeks[0];
+    // this.maybee.hours.thisWeek = this.locations['locations'][2].weeks[0];
+    // // this.waldo.hours = this.locations['locations'][0].weeks[0];
+
+    // // this.waldo['hours'] = Array.of(this.waldo['hours'][0]);
+    // console.log(this.waldo.hours);
+    // console.log('todays weeknum', this.weekNumber)
+    // console.log('waldo.hours.monday.rendered', this.waldo.hours.thisWeek['Monday'].rendered);
+    // });
 
     // console.log('this.locations after getjson', this.locations);
 
@@ -71,31 +193,10 @@ export class HoursComponent implements OnInit {
     //   console.log('hrs',hrs);
     // });
 
-
-
   }
 
   afterInit() {
 
-    this.now = new Date();
-    this.onejan = new Date(this.now.getFullYear(), 0, 1);
-    this.weekNumber = Math.ceil((((this.now - this.onejan) / 86400000) + this.onejan.getDay() + 1) / 7);
-    // this.locations = JSON.parse(this.locations);
-
-    // console.log(this.locations['locations'][2]);
-    console.log(this.locations)
-    this.locations['locations'][0].image = '/assets/images/hours/waldo.jpg';
-    this.locations['locations'][1].image = '/assets/images/hours/swain.jpg';
-    this.locations['locations'][2].image = '/assets/images/hours/maybee.jpg';
-
-    this.waldo.hours.thisWeek = this.locations['locations'][0].weeks[0];
-    this.maybee.hours.thisWeek = this.locations['locations'][2].weeks[0];
-    // this.waldo.hours = this.locations['locations'][0].weeks[0];
-
-    // this.waldo['hours'] = Array.of(this.waldo['hours'][0]);
-    console.log(this.waldo.hours);
-    console.log('todays weeknum', this.weekNumber)
-    console.log('waldo.hours.monday.rendered', this.waldo.hours.thisWeek['Monday'].rendered);
   }
   // calcCurrentWeekIndex() {
   //   this
