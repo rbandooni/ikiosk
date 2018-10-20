@@ -90,6 +90,8 @@ export class HoursComponent implements OnInit {
     console.log('now', this.now);
     console.log('onejan', this.onejan);
     console.log('weekno', this.weekNumber);
+    this.weekNumber = this.weekNumber - 43;
+    // this.weekNumber = 0; ?? toTest
     // this.waldo = this.locations['locations'][0];
     // this.swain = this.locations['locations'][1];
     // this.maybee = this.locations['locations'][2];
@@ -97,35 +99,35 @@ export class HoursComponent implements OnInit {
     Object.assign(this.waldo, hrs['locations'][0]);
     Object.assign(this.swain, hrs['locations'][1]);
     Object.assign(this.maybee, hrs['locations'][2]);
-    Object.assign(this.waldo.hrs.Sunday, hrs['locations'][0].weeks[0]['Sunday']);
-    this.waldo.hrs.Sunday = hrs['locations'][0].weeks[0]['Sunday'];
-    this.waldo.hrs.Monday = hrs['locations'][0].weeks[0]['Monday'];
-    this.waldo.hrs.Tuesday = hrs['locations'][0].weeks[0]['Tuesday'];
-    this.waldo.hrs.Wednesday = hrs['locations'][0].weeks[0]['Wednesday'];
-    this.waldo.hrs.Thursday = hrs['locations'][0].weeks[0]['Thursday'];
-    this.waldo.hrs.Friday = hrs['locations'][0].weeks[0]['Friday'];
-    this.waldo.hrs.Saturday = hrs['locations'][0].weeks[0]['Saturday'];
-    // Object.assign(this.maybee.hrs, hrs['locations'][2].weeks[0]);
-    // this.maybee.hrs = JSON.parse(hrs['locations'][2].weeks[0]);
-    this.swain.hrs.Sunday = hrs['locations'][1].weeks[0]['Sunday'];
-    this.swain.hrs.Monday = hrs['locations'][1].weeks[0]['Monday'];
-    this.swain.hrs.Tuesday = hrs['locations'][1].weeks[0]['Tuesday'];
-    this.swain.hrs.Wednesday = hrs['locations'][1].weeks[0]['Wednesday'];
-    this.swain.hrs.Thursday = hrs['locations'][1].weeks[0]['Thursday'];
-    this.swain.hrs.Friday = hrs['locations'][1].weeks[0]['Friday'];
-    this.swain.hrs.Saturday = hrs['locations'][1].weeks[0]['Saturday'];
+    Object.assign(this.waldo.hrs.Sunday, hrs['locations'][0].weeks[this.weekNumber]['Sunday']);
+    this.waldo.hrs.Sunday = hrs['locations'][0].weeks[this.weekNumber]['Sunday'];
+    this.waldo.hrs.Monday = hrs['locations'][0].weeks[this.weekNumber]['Monday'];
+    this.waldo.hrs.Tuesday = hrs['locations'][0].weeks[this.weekNumber]['Tuesday'];
+    this.waldo.hrs.Wednesday = hrs['locations'][0].weeks[this.weekNumber]['Wednesday'];
+    this.waldo.hrs.Thursday = hrs['locations'][0].weeks[this.weekNumber]['Thursday'];
+    this.waldo.hrs.Friday = hrs['locations'][0].weeks[this.weekNumber]['Friday'];
+    this.waldo.hrs.Saturday = hrs['locations'][0].weeks[this.weekNumber]['Saturday'];
+    // Object.assign(this.maybee.hrs, hrs['locations'][2].weeks[this.weekNumber]);
+    // this.maybee.hrs = JSON.parse(hrs['locations'][2].weeks[this.weekNumber]);
+    this.swain.hrs.Sunday = hrs['locations'][1].weeks[this.weekNumber]['Sunday'];
+    this.swain.hrs.Monday = hrs['locations'][1].weeks[this.weekNumber]['Monday'];
+    this.swain.hrs.Tuesday = hrs['locations'][1].weeks[this.weekNumber]['Tuesday'];
+    this.swain.hrs.Wednesday = hrs['locations'][1].weeks[this.weekNumber]['Wednesday'];
+    this.swain.hrs.Thursday = hrs['locations'][1].weeks[this.weekNumber]['Thursday'];
+    this.swain.hrs.Friday = hrs['locations'][1].weeks[this.weekNumber]['Friday'];
+    this.swain.hrs.Saturday = hrs['locations'][1].weeks[this.weekNumber]['Saturday'];
     // var obj = hrs.reduce(function(acc, cur, i) {
     //   acc[i] = cur;
     //   return acc;
     // }, {});
     // console.log(obj);
-    this.maybee.hrs.Sunday = hrs['locations'][2].weeks[0]['Sunday'];
-    this.maybee.hrs.Monday = hrs['locations'][2].weeks[0]['Monday'];
-    this.maybee.hrs.Tuesday = hrs['locations'][2].weeks[0]['Tuesday'];
-    this.maybee.hrs.Wednesday = hrs['locations'][2].weeks[0]['Wednesday'];
-    this.maybee.hrs.Thursday = hrs['locations'][2].weeks[0]['Thursday'];
-    this.maybee.hrs.Friday = hrs['locations'][2].weeks[0]['Friday'];
-    this.maybee.hrs.Saturday = hrs['locations'][2].weeks[0]['Saturday'];
+    this.maybee.hrs.Sunday = hrs['locations'][2].weeks[this.weekNumber]['Sunday'];
+    this.maybee.hrs.Monday = hrs['locations'][2].weeks[this.weekNumber]['Monday'];
+    this.maybee.hrs.Tuesday = hrs['locations'][2].weeks[this.weekNumber]['Tuesday'];
+    this.maybee.hrs.Wednesday = hrs['locations'][2].weeks[this.weekNumber]['Wednesday'];
+    this.maybee.hrs.Thursday = hrs['locations'][2].weeks[this.weekNumber]['Thursday'];
+    this.maybee.hrs.Friday = hrs['locations'][2].weeks[this.weekNumber]['Friday'];
+    this.maybee.hrs.Saturday = hrs['locations'][2].weeks[this.weekNumber]['Saturday'];
 
     this.waldo.image = '/assets/images/hours/waldo.jpg';
     this.swain.image = '/assets/images/hours/swain.jpg';
@@ -160,9 +162,9 @@ export class HoursComponent implements OnInit {
     // this.locations['locations'][1].image = '/assets/images/hours/swain.jpg';
     // this.locations['locations'][2].image = '/assets/images/hours/maybee.jpg';
 
-    // this.waldo.hours.thisWeek = this.locations['locations'][0].weeks[0];
-    // this.maybee.hours.thisWeek = this.locations['locations'][2].weeks[0];
-    // // this.waldo.hours = this.locations['locations'][0].weeks[0];
+    // this.waldo.hours.thisWeek = this.locations['locations'][0].weeks[this.weekNumber];
+    // this.maybee.hours.thisWeek = this.locations['locations'][2].weeks[this.weekNumber];
+    // // this.waldo.hours = this.locations['locations'][0].weeks[this.weekNumber];
 
     // // this.waldo['hours'] = Array.of(this.waldo['hours'][0]);
     // console.log(this.waldo.hours);

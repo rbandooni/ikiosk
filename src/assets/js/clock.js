@@ -11,6 +11,11 @@ $(function(){
 
     $(".swal2-popup #swal2-content p>a").click(function (e) { e.preventDefault(); console.log('link stopped') });
 
+    $("#newsModal a").click(function(e) {
+        e.preventDefault();
+        console.log('a clicked');
+      });
+
 })
 
 
@@ -21,13 +26,23 @@ function showModal(evt) {
 
     swal({
         title: evt.events[0].title,
-        html: evt.events[0].description,
+        html: '<div id="eventsModal">'+evt.events[0].description+"</div>",
         // showCloseButton: true,
         confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
         customClass: 'animated jello swal-wide',
-        timer: 20 * 1000
+        timer: 60 * 1000
     })
 
+}
+
+function showNewsPopup(feedData) {
+    console.log(feedData);
+    swal({
+        title: feedData[0].title,
+        customClass: 'swal-wide',
+        html: '<div id="newsModal">'+feedData[0].content+'</div>',
+        timer: 60 * 1000
+    })
 }
 
 function getHours(weeks) {

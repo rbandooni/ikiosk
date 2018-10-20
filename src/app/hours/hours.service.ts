@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
 
+
 // const API_URL = environment.hoursApiUrl;
 // const API_URL = "https://ikioskdev.library.wmich.edu/hours/api.php?branch=";
 
@@ -31,7 +32,8 @@ export class HoursService {
 
   getAllHours(){
 
-    return this.http.get<any>('https://ikioskdev.library.wmich.edu/api/hours/libcal.php?weeks=1');
+
+    return this.http.get<any>('https://ikioskdev.library.wmich.edu/api/hours/libcal.php?weeks=100');
     // return this.jsonData;
 
     // return this.http.post<any[]>(`https://ikioskdev.library.wmich.edu/api/hours/libcal.php`, {
