@@ -13,11 +13,11 @@
                 <tbody>
                   <tr [className]="this.today === 'Monday' ? 'today' : ''"> 
                     <td>Monday</td>
-                    <td> {{ waldo.hrs.Monday.rendered}}</td> 
+                    <td [innerHTML]="waldo.hrs.Monday.rendered"></td> 
                   </tr>
                   <tr [className]="this.today === 'Tuesday' ? 'today' : ''"> 
                     <td>Tuesday</td>
-                    <td> {{ waldo.hrs.Tuesday.rendered}}</td> 
+                    <td [innerHTML]="waldo.hrs.Tuesday.rendered"></td> 
                   </tr>
                   <tr [className]="this.today === 'Wednesday' ? 'today' : ''"> 
                     <td>Wednesday</td>

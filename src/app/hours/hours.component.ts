@@ -23,37 +23,41 @@ export class HoursComponent implements OnInit {
 
   locations: object;
   waldo = {
-    "image": "", 
-    "hrs": {
-      "Sunday":"",
-      "Monday":"",
-      "Tuesday":"",
-      "Wednesday": "",
-      "Thursday": "",
-      "Friday": "",
-      "Saturday": ""
+    image: "", 
+    hrs: {
+      Sunday:"",
+      Monday:"",
+      Tuesday:"",
+      Wednesday: "",
+      Thursday: "",
+      Friday: "",
+      Saturday: ""
     }
   };
-  swain = {"image": "", "hrs": {
-    "Sunday":"",
-    "Monday":"",
-    "Tuesday":"",
-    "Wednesday": "",
-    "Thursday": "",
-    "Friday": "",
-    "Saturday": ""
-  }};
+  swain = {
+    image: "", 
+    hrs: {
+      Sunday:"",
+      Monday:"",
+      Tuesday:"",
+      Wednesday: "",
+      Thursday: "",
+      Friday: "",
+      Saturday: ""
+    }
+  };
   maybee = {
-    "image": "",
-    "hrs": {
-    "Sunday":"",
-    "Monday":"",
-    "Tuesday":"",
-    "Wednesday": "",
-    "Thursday": "",
-    "Friday": "",
-    "Saturday": ""
-  }};
+    image: "", 
+    hrs: {
+      Sunday:"",
+      Monday:"",
+      Tuesday:"",
+      Wednesday: "",
+      Thursday: "",
+      Friday: "",
+      Saturday: ""
+    }
+  };
 
   weekNumber: number;
   now: any;
