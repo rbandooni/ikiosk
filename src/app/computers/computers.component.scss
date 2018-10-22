@@ -2,14 +2,14 @@ tr.active {
     background-color: #ececec;
 }
 
-tr.active:after {
-    content: '►';
-    color: #ececec; // background-color: white;
-    font-size: 2em;
-    position: relative;
-    line-height: 200%;
-    right: -20px;
-}
+// tr.active:after {
+//     content: '►';
+//     color: #ececec; // background-color: white;
+//     font-size: 2em;
+//     position: relative;
+//     line-height: 200%;
+//     right: -20px;
+// }
 
 .icon {
     background-image: url('//ikiosk.library.wmich.edu/Computer-01.png');
@@ -31,4 +31,12 @@ tr.active:after {
 
 .icon.icon3 {
     background-image: url('//itlabs-labstats.bernhard.wmich.edu/Images/ComputerIcons/Computer-01-Offline.png');
+}
+
+iframe {
+   overflow: hidden; 
+   margin: 0; 
+   width: 100%; 
+   height:900px; 
+   border: none;
 }

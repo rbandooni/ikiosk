@@ -6,163 +6,54 @@
       <div class="row">
         <div class="col-md-4">
           <div class="card md-auto">
-            <img class="card-img-top" [src]="waldo.image" alt="Card image cap">
+            <img class="card-img-top" [src]="waldo?.image" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">{{ waldo.name }}</h5>
+              <h3 class="card-title text-center">{{ waldo?.name }}</h3>
               <table class="table table-hover">
                 <tbody>
-                  <tr [className]="this.today === 'Monday' ? 'today' : ''"> 
-                    <td>Monday</td>
-                    <td [innerHTML]="waldo.hrs.Monday.rendered"></td> 
-                  </tr>
-                  <tr [className]="this.today === 'Tuesday' ? 'today' : ''"> 
-                    <td>Tuesday</td>
-                    <td [innerHTML]="waldo.hrs.Tuesday.rendered"></td> 
-                  </tr>
-                  <tr [className]="this.today === 'Wednesday' ? 'today' : ''"> 
-                    <td>Wednesday</td>
-                    <td> {{ waldo.hrs.Wednesday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Thursday' ? 'today' : ''"> 
-                    <td>Thursday</td>
-                    <td> {{ waldo.hrs.Thursday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Friday' ? 'today' : ''"> 
-                    <td>Friday</td>
-                    <td> {{ waldo.hrs.Friday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Saturday' ? 'today' : ''"> 
-                    <td>Saturday</td>
-                    <td> {{ waldo.hrs.Saturday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Sunday' ? 'today' : ''"> 
-                    <td>Sunday</td>
-                    <td> {{ waldo.hrs.Sunday.rendered}}</td> 
+                  <tr *ngFor="let weeks of waldo?.hours" [className]="this.today === weeks.name ? 'today' : ''">
+                    <td>{{ weeks.name }}</td>
+                    <td>{{ weeks.rendered }}</td>
                   </tr>
                 </tbody>
               </table>
-              <!-- <ul class="list-group list-group-flush">
-                <li class="list-group-item" *ngFor="let hours of waldo.weeks">Cras justo odio</li>
-                <li class="list-group-item">Sunday {{ waldo.hrs.Sunday.rendered }}</li>
-              </ul> -->
             </div>
-
-            <!-- <div class="card-body">
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div> -->
           </div>
         </div>
         <div class="col-md-4">
           <div class="card md-auto">
-            <img class="card-img-top" [src]="maybee.image" alt="Card image cap">
+            <img class="card-img-top" [src]="maybee?.image" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">{{  maybee.name }}</h5>
+              <h3 class="card-title text-center">{{  maybee?.name }}</h3>
               <table class="table table-hover">
                 <tbody>
-                  <tr [className]="this.today === 'Monday' ? 'today' : ''"> 
-                    <td>Monday</td>
-                    <td> {{ maybee.hrs.Monday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Tuesday' ? 'today' : ''"> 
-                    <td>Tuesday</td>
-                    <td> {{ maybee.hrs.Tuesday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Wednesday' ? 'today' : ''"> 
-                    <td>Wednesday</td>
-                    <td> {{ maybee.hrs.Wednesday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Thursday' ? 'today' : ''"> 
-                    <td>Thursday</td>
-                    <td> {{ maybee.hrs.Thursday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Friday' ? 'today' : ''"> 
-                    <td>Friday</td>
-                    <td> {{ maybee.hrs.Friday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Saturday' ? 'today' : ''"> 
-                    <td>Saturday</td>
-                    <td> {{ maybee.hrs.Saturday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Sunday' ? 'today' : ''"> 
-                    <td>Sunday</td>
-                    <td> {{ maybee.hrs.Sunday.rendered}}</td> 
+                  <tr *ngFor="let weeks of maybee?.hours" [className]="this.today === weeks.name ? 'today' : ''">
+                    <td>{{ weeks.name }}</td>
+                    <td>{{ weeks.rendered }}</td>
                   </tr>
                 </tbody>
-              </table>  
+              </table>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card md-auto" >
-            <img class="card-img-top" [src]="swain.image" alt="Card image cap">
+            <img class="card-img-top" [src]="swain?.image" alt="Card image cap">
             <div class="card-body">
-              <h5 class="card-title">{{ swain.name }}</h5>
+              <h3 class="card-title text-center">{{ swain?.name }}</h3>
               <table class="table table-hover">
                 <tbody>
-                  <tr [className]="this.today === 'Monday' ? 'today' : ''"> 
-                    <td>Monday</td>
-                    <td> {{ swain.hrs.Monday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Tuesday' ? 'today' : ''"> 
-                    <td>Tuesday</td>
-                    <td> {{ swain.hrs.Tuesday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Wednesday' ? 'today' : ''"> 
-                    <td>Wednesday</td>
-                    <td> {{ swain.hrs.Wednesday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Thursday' ? 'today' : ''"> 
-                    <td>Thursday</td>
-                    <td> {{ swain.hrs.Thursday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Friday' ? 'today' : ''"> 
-                    <td>Friday</td>
-                    <td> {{ swain.hrs.Friday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Saturday' ? 'today' : ''"> 
-                    <td>Saturday</td>
-                    <td> {{ swain.hrs.Saturday.rendered}}</td> 
-                  </tr>
-                  <tr [className]="this.today === 'Sunday' ? 'today' : ''"> 
-                    <td>Sunday</td>
-                    <td> {{ swain.hrs.Sunday.rendered}}</td> 
+                  <tr *ngFor="let weeks of swain?.hours" [className]="this.today === weeks.name ? 'today' : ''">
+                    <td>{{ weeks.name }}</td>
+                    <td>{{ weeks.rendered }}</td>
                   </tr>
                 </tbody>
-              </table> 
+              </table>
             </div>
 
         </div>
       </div>
     </div>
-    <!-- <div class="card col-auto mb-3 mr-5" style="width: 18rem;" *ngFor="let libraries of locations?.locations">
-      <img class="card-img-top" [src]="libraries.image">
-      <div class="card-body">
-        <h5 class="card-title text-center">{{ libraries.name }}</h5>
-         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-      
-      <!-- <ul class="list-group">
-        <li class="list-group-item">Cras justo odio</li>
-      </ul> 
-      
-      <table class="table table-responsive">
-         <thead>
-          <tr>
-            <th></th>
-          </tr>
-        </thead> 
-        <tbody>
-          <tr>
-            <td>Sunday</td>
-           
-          </tr>
-        </tbody>
-      </table>
 
-      
-    </div>
-
-
-  </div> -->
 
 </div>

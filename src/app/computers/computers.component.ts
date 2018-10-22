@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import * as $ from "jquery";
+import * as $ from 'jquery';
 import { LabStatsService } from '../lab-stats.service';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -36,6 +36,8 @@ export class ComputersComponent implements OnInit {
 
   ngOnInit() {
 
+    $('#floor1Map').removeClass('d-none');
+    $('#firstFloorTab').addClass('active');
     // $('#mapTarget').LabMap({
     //   mapId: 1006,
     //   authId: 'acf442ce-27d8-406e-bbf5-98a438d13b68',
@@ -67,13 +69,44 @@ export class ComputersComponent implements OnInit {
     this.router.navigate(['/index']);
   }
 
+  changeMapView(id: number) {
+    if (id === 0) {
+      // activate lower level map
 
+      $('.labmap').removeClass('d-none').addClass('d-none');
+      $('.leftTabs').removeClass('active');
+      $('#floor0Map').removeClass('d-none');
+      $('#lowerFloorTab').addClass('active');
 
+    } else if (id === 1) {
+      // activate 1st floor map
+      $('.labmap').removeClass('d-none').addClass('d-none');
+      $('.leftTabs').removeClass('active');
+      $('#floor1Map').removeClass('d-none');
+      $('#firstFloorTab').addClass('active');
+    } else if (id === 2) {
+      // activate 2nd floor map
+      $('.labmap').removeClass('d-none').addClass('d-none');
+      $('.leftTabs').removeClass('active');
+      $('#floor2Map').removeClass('d-none');
+      $('#secondFloorTab').addClass('active');
+    } else {
+      // activate 3rd floor map
+      $('.labmap').removeClass('d-none').addClass('d-none');
+      $('.leftTabs').removeClass('active');
 
-  ngOnDestroy() {
-    clearInterval(this.timer);
-    console.log('Inside Destroy');
+      $('#floor3Map').removeClass('d-none');
+      $('#thirdFloorTab').addClass('active');
+    }
+
   }
+
+
+
+  // ngOnDestroy() {
+  //   clearInterval(this.timer);
+  //   console.log('Inside Destroy');
+  // }
 
 
 }

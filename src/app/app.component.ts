@@ -47,8 +47,7 @@ export class AppComponent implements OnInit {
       if (this.router.url !== '/') {
         console.log('not index!');
         this.router.navigate(['index']);
-      }
-      else {
+      } else {
         console.log('page reload deferred');
       }
     });

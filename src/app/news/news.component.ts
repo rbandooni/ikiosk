@@ -30,12 +30,12 @@ export class NewsComponent implements OnInit {
 
   loadNewsItem(id: number) {
     // console.log(id);
-    let strpid = [id];
+    const strpid = [id];
     this.popupFeed = this.newsFeed.filter((val, index, arr) => {
       // return strpid.indexOf(index.id)
       // console.log(val.id, strpid[0]);
       return val.id === strpid[0];
-    })
+    });
     // console.log(this.popupFeed);
     showNewsPopup(this.popupFeed);
   }
