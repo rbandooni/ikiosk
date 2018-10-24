@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, AfterContentInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
 
@@ -15,7 +15,7 @@ declare function showModal(evtData): any;
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent implements OnInit, OnDestroy {
 
   // private apiToken: any = null;
 
@@ -88,5 +88,8 @@ export class CalendarComponent implements OnInit {
     console.log('showModal run');
   }
 
+  ngOnDestroy() {
+
+  }
 
 }

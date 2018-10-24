@@ -7,7 +7,7 @@
  * An object that stores different settings for the bubbles
  */
 var bubbleOptions = {
-    maxBubbles: 50,   //A bubble ceiling, for high resolution monitors
+    maxBubbles: 100,   //A bubble ceiling, for high resolution monitors
     timer: -1,    //The interval time
     tick: 100,   //The tick speed
     bubbles: [],    //The array of bubbles
@@ -62,7 +62,8 @@ function instantiateBubbles() {
     //Create the bubbles
     var bubbles = [];
     //The default number of bubbles is set to a ratio of 1 bubble to every 45,000 pixels (bubbleOptions.ratio)
-    var bubbleLength = Math.floor(window.innerWidth * window.innerHeight / bubbleOptions.ratio);
+    // var bubbleLength = Math.floor(window.innerWidth * window.innerHeight / bubbleOptions.ratio);
+    let bubbleLength = 10;
     for (var i = 0; i < bubbleLength; i++) {
         var bubbleElem = document.createElement('div');
         bubbleElem.setAttribute('id', 'bubble' + i);
@@ -115,7 +116,8 @@ Bubble.prototype.create = function () {
     this.yVel = (Math.random() * 4) - 2;
 
     //Set the size
-    this.diam = Math.floor(Math.random() * 160) + 40;
+    // this.diam = Math.floor(Math.random() * 160) + 40;
+    this.diam = Math.floor(Math.random() * ((400-30)+1)+30);
     this.e.style.width = this.diam + "px";
     this.e.style.height = this.diam + "px";
 

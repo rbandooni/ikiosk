@@ -4,11 +4,11 @@
 
     <div class="col-md-12">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card md-auto">
             <img class="card-img-top" [src]="waldo?.image" alt="Card image cap">
             <div class="card-body">
-              <h3 class="card-title text-center">{{ waldo?.name }}</h3>
+              <h4 class="card-title">{{ waldo?.name }}</h4>
               <table class="table table-hover">
                 <tbody>
                   <tr *ngFor="let weeks of waldo?.hours" [className]="this.today === weeks.name ? 'today' : ''">
@@ -20,11 +20,11 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card md-auto">
             <img class="card-img-top" [src]="maybee?.image" alt="Card image cap">
             <div class="card-body">
-              <h3 class="card-title text-center">{{  maybee?.name }}</h3>
+              <h4 class="card-title">{{  maybee?.name }}</h4>
               <table class="table table-hover">
                 <tbody>
                   <tr *ngFor="let weeks of maybee?.hours" [className]="this.today === weeks.name ? 'today' : ''">
@@ -36,11 +36,11 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="card md-auto" >
             <img class="card-img-top" [src]="swain?.image" alt="Card image cap">
             <div class="card-body">
-              <h3 class="card-title text-center">{{ swain?.name }}</h3>
+              <h4 class="card-title">{{ swain?.name }}</h4>
               <table class="table table-hover">
                 <tbody>
                   <tr *ngFor="let weeks of swain?.hours" [className]="this.today === weeks.name ? 'today' : ''">
@@ -53,6 +53,22 @@
 
         </div>
       </div>
+        <div class="col-md-3">
+          <div class="card md-auto">
+            <img class="card-img-top" [src]="zhang?.image" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title"><!--{{ zhang?.name }}-->Zhang Legacy Collections Center</h4>
+              <table class="table table-hover">
+                <tbody>
+                  <tr *ngFor="let weeks of zhang?.hours" [className]="this.today === weeks.name ? 'today' : ''">
+                    <td>{{ weeks.name }}</td>
+                    <td>{{ weeks.rendered }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
     </div>
 
 

@@ -62,6 +62,8 @@ export class HoursComponent implements OnInit {
   waldo: any;
   maybee: any;
   swain: any;
+  zhang: any;
+
   weekNumber: number;
   now: any;
   onejan: any;
@@ -105,6 +107,14 @@ export class HoursComponent implements OnInit {
       this.swain = swn;
 
     });
+
+    this.hoursService.getZhangHours().subscribe((zhng) => {
+      this.zhang = zhng;
+    });
+
+    // this.hoursService.getAllHours().subscribe(allHrs => {
+    //   console.log(allHrs);
+    // });
 
 
     // this.hoursService.getAllHours().subscribe((hrs) => {

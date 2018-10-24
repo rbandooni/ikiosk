@@ -1,17 +1,17 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef, Input } from '@angular/core';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.scss']
 })
-export class IndexComponent implements AfterViewInit {
+export class IndexComponent implements AfterViewInit, OnInit {
 
   ikioskGrid: boolean;
-  gridSize:number = 4;
+  gridSize = 4;
 
-  gridClass: string = 'col-md-3 col-sm-4 col-xs-6 kioskGrid';
+  gridClass = 'col-md-3 col-sm-4 col-xs-6 kioskGrid';
 
   // gridClass: string = 'col-lg-3 col-md-4 col-sm-6 col-xs-12 kioskgrid';
 
@@ -31,13 +31,15 @@ export class IndexComponent implements AfterViewInit {
 
   constructor(private router: Router) {
 
-    // if (window.screen.availWidth === 1920) {
+    if (window.screen.availWidth === 1920) {
       this.ikioskGrid = true;
-    // }
-    // else {
-      // this.ikioskGrid = false;
-    // }
-
+    } else if(window.screen.availWidth > 360 || window.screen.availWidth > 1920) {
+      this.ikioskGrid = true;
+    }
+    else {
+      this.ikioskGrid = false;
+    }
+    console.log(window.screen.width);
   }
 
 
@@ -46,38 +48,38 @@ export class IndexComponent implements AfterViewInit {
     console.log('WIDTH', window.screen.availWidth);
     console.log('HEIGHT', window.screen.availHeight);
 
-    var dateObj = new Date();
+    const dateObj = new Date();
     // var month = dateObj.getUTCMonth()  //+ 1; //months from 1-12
-    var day = dateObj.getDate();
-    var year = dateObj.getUTCFullYear();
-    var weekday = new Array(7);
-    var monthArr = new Array(12);
-    monthArr[0] = "January";
-    monthArr[1] = "February";
-    monthArr[2] = "March";
-    monthArr[3] = "April";
-    monthArr[4] = "May";
-    monthArr[5] = "June";
-    monthArr[6] = "July";
-    monthArr[7] = "August";
-    monthArr[8] = "September";
-    monthArr[9] = "October";
-    monthArr[10] = "November";
-    monthArr[11] = "December";
+    const day = dateObj.getDate();
+    const year = dateObj.getUTCFullYear();
+    const weekday = new Array(7);
+    const monthArr = new Array(12);
+    monthArr[0] = 'January';
+    monthArr[1] = 'February';
+    monthArr[2] = 'March';
+    monthArr[3] = 'April';
+    monthArr[4] = 'May';
+    monthArr[5] = 'June';
+    monthArr[6] = 'July';
+    monthArr[7] = 'August';
+    monthArr[8] = 'September';
+    monthArr[9] = 'October';
+    monthArr[10] = 'November';
+    monthArr[11] = 'December';
 
-    weekday[0] = "Sunday";
-    weekday[1] = "Monday";
-    weekday[2] = "Tuesday";
-    weekday[3] = "Wednesday";
-    weekday[4] = "Thursday";
-    weekday[5] = "Friday";
-    weekday[6] = "Saturday";
-    var month = monthArr[dateObj.getMonth()];
-    var n = weekday[dateObj.getDay()];
+    weekday[0] = 'Sunday';
+    weekday[1] = 'Monday';
+    weekday[2] = 'Tuesday';
+    weekday[3] = 'Wednesda';
+    weekday[4] = 'Thursday';
+    weekday[5] = 'Friday';
+    weekday[6] = 'Saturday';
+    const month = monthArr[dateObj.getMonth()];
+    const n = weekday[dateObj.getDay()];
     this.dayText = n;
     this.day = day;
     this.month = month;
-    this.currentDate = year + "-" + dateObj.getMonth() + "-" + day;
+    this.currentDate = year + '-' + dateObj.getMonth() + '-' + day;
 
   }
 
@@ -119,7 +121,7 @@ export class IndexComponent implements AfterViewInit {
   }
 
   drawFace(cx, radius) {
-    var grad;
+    let grad;
     cx.beginPath();
     cx.arc(0, 0, radius, 0, 2 * Math.PI);
     cx.fillStyle = 'white';
@@ -139,11 +141,11 @@ export class IndexComponent implements AfterViewInit {
   }
 
   drawNumbers(cx, radius) {
-    var ang;
-    var num;
-    cx.font = radius * 0.15 + "px arial";
-    cx.textBaseline = "middle";
-    cx.textAlign = "center";
+    let ang;
+    let num;
+    cx.font = radius * 0.15 + 'px arial';
+    cx.textBaseline = 'middle';
+    cx.textAlign = 'center';
     for (num = 1; num < 13; num++) {
       ang = num * Math.PI / 6;
       cx.rotate(ang);
@@ -157,17 +159,17 @@ export class IndexComponent implements AfterViewInit {
   }
 
   drawTime(cx, radius) {
-    var now = new Date();
-    var hour = now.getHours();
-    var minute = now.getMinutes();
-    var second = now.getSeconds();
-    //hour
+    const now = new Date();
+    let hour = now.getHours();
+    let minute = now.getMinutes();
+    let second = now.getSeconds();
+    // hour
     hour = hour % 12;
     hour = (hour * Math.PI / 6) +
       (minute * Math.PI / (6 * 60)) +
       (second * Math.PI / (360 * 60));
     this.drawHand(cx, hour, radius * 0.5, radius * 0.07, '');
-    //minute
+    // minute
     minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
     this.drawHand(cx, minute, radius * 0.8, radius * 0.07, '');
     // second
@@ -179,7 +181,7 @@ export class IndexComponent implements AfterViewInit {
   drawHand(cx, pos, length, width, color) {
     cx.beginPath();
     cx.lineWidth = width;
-    cx.lineCap = "round";
+    cx.lineCap = 'round';
     cx.moveTo(0, 0);
     cx.rotate(pos);
     cx.lineTo(0, -length);

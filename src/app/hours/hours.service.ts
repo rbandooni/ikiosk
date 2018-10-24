@@ -43,6 +43,9 @@ data: any;
     return this.http.get('https://ikioskdev.library.wmich.edu/api/hours/libcal.php?weeks=1&lib=maybee');
   }
 
+  getZhangHours(): Observable<any> {
+    return this.http.get('https://ikioskdev.library.wmich.edu/api/hours/libcal.php?weeks=1&lib=zhang');
+  }
   // getWaldoHrs(): Observable<any> {
   //   this.data = this.getWaldoHours();
   //   return this.data['loc_9079'];

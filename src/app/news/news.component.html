@@ -1,5 +1,5 @@
 <div class="routeContainer">
-  <div class="container-fluid">
+  <!-- <div class="container-fluid">
     <div class="row">
       <div class="col-lg-6 mb-2" *ngFor="let newsItem of newsFeed; let i = index">
         <ul class="list-group">
@@ -10,5 +10,24 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
+    <div class="row mt-2">
+    
+      <div class="col-md-12">
+        <div class="row grid">
+          <div class="col-md-3 mb-3 gridParent" *ngFor="let newsItem of newsFeed; let i = index">
+            <div [class]="'eventGrid grid'+i" (tap)="loadNewsItem(newsItem.id)">
+              <div class="overlay"></div>
+              <h4 class="text-center" style="font-size: 1.3rem;font-weight: 600;">{{ newsItem.title }}</h4>
+              <p class="text-strong">{{ newsItem.published | date }}</p>  
+            </div>
+    
+          </div>
+        </div>
+    
+      </div>
+    
+    
+    
+    </div>
 </div>

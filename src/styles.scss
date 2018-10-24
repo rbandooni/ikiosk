@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 // @import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+// @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 // @import "~bootstrap/scss/bootstrap.scss";
 // @import "../node_modules/angular-calendar/css/angular-calendar.css";
 /* fallback */
@@ -21,9 +21,9 @@
     text-align: left !important;
 }
 
-.swal2-popup #swal2-content a {
-    /* text-align: center; */
-}
+// .swal2-popup #swal2-content a {
+//     /* text-align: center; */
+// }
 
 .material-icons {
     font-family: 'Material Icons';
@@ -50,6 +50,10 @@ router-outlet~* {
 
 * {
     // font-family: 'Montserrat', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif; // font-size: 1em;
+}
+
+html {
     font-family: 'Source Sans Pro', sans-serif; // font-size: 1em;
 }
 
@@ -146,7 +150,8 @@ body {
     visibility: hidden !important;
 }
 
-#newsModal, #eventsModal {
+#newsModal,
+#eventsModal {
     pointer-events: none;
     cursor: default;
- }
+}

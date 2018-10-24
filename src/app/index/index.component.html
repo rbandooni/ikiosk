@@ -1,11 +1,11 @@
 <div class="row">
       <div [className]="gridClass">
-            <div (tap)="linkToComponent('hours')" *ngIf="ikioskGrid">
+            <div (tap)="linkToComponent('hours')">
                   <canvas #clock style="width: 10vw;"></canvas>
             </div>
-            <div (tap)="linkToComponent('hours')" *ngIf="!ikioskGrid">  
-                  <i class="fa fa-clock-o"></i>
-            </div>
+            <!-- <div (tap)="linkToComponent('hours')" *ngIf="!ikioskGrid">  
+                  <i class="fa fa-clock-o" style="color: white;"></i>
+            </div> -->
             <p class="kioskGridText" [innerText]="gridText[0] | uppercase"></p>
       </div>
       <div [className]="gridClass">
@@ -32,7 +32,7 @@
             <p class="kioskGridText" [innerText]="gridText[3] | uppercase"></p>
       </div>
       <div [className]="gridClass">
-            <div (tap)="linkToComponent('calendar')" >
+            <div (tap)="linkToComponent('calendar')" *ngIf="ikioskGrid">
                   <!-- <i class="fa fa-calendar"></i> -->
                   <div class="calendar">
                         <!-- datetime="{{currentDate}}" -->
@@ -45,6 +45,9 @@
                         </time>
                   </div>
                   
+            </div>
+            <div (tap)="linkToComponent('calendar')" *ngIf="!ikioskGrid">
+                   <i class="fa fa-calendar" style="color: white;"></i>
             </div>
             <p class="kioskGridText" [innerText]="gridText[4] | uppercase"></p>
       </div>
