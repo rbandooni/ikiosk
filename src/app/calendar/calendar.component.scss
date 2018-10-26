@@ -20,11 +20,16 @@ $dict: vector event library landscape virtual scenic pattern vr panoramic;
         top: 50%;
         transform: translateY(-50%);
     }
+    h4 {
+        font-size: 1.3rem;
+        // font-weight: 600;
+        text-shadow: 0 0 7px #2d2d2d;
+    }
     .overlay {
         position: absolute;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.5);
     }
 }
 
@@ -42,14 +47,6 @@ $i: 0;
     $i: $i+1;
 }
 
-// @for $i from 0 through length($dict) {
-//     .eventGrid.grid#{$i} {
-//         background-image: url('https://source.unsplash.com/1600x900/?#{$dict}');
-//         background-size: cover
-//     }
-// }
-// .routeContainer {
-//     .row {
-//         // height: 90vh;
-//     }
-// }
+.fa-small {
+    font-size: 0.6rem;
+}

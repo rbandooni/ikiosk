@@ -1,34 +1,15 @@
 <div class="routeContainer">
-
-  <!-- <div class="row filterRow">
-    <div class="col-md-12">
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">All Events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Category 1</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Catregory 2</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    </div>
-
-  </div> -->
   <div class="row mt-2">
 
     <div class="col-md-12">
       <div class="row grid">
-    <div class="col-md-4 mb-3 gridParent" *ngFor="let event of eventsList?.events; let i = index" >
-      <div [class]="'eventGrid grid'+i" (tap)="eventModal(event.id)">
+    <div class="col-md-4 mb-3 gridParent" *ngFor="let event of eventsList?.events; let i = index" (tap)="eventModal(event.id)">
+      <div [class]="'eventGrid grid'+i">
         <div class="overlay"></div>
-        <h4 class="text-center" style="font-size: 1.3rem;font-weight: 600;">{{ event.title }}</h4>
-        <p class="text-strong">{{ event.start | date }} {{ event.start | date:'shortTime' }}</p>
-        <p class="text-strong">{{ event.location.name }}</p>
+        <h4 class="text-center">{{ event.title }}</h4>
+        <p class="text-strong">{{ event.start | date }}<i class="fa fa-circle fa-small ml-3 mr-2"></i>   {{ event.start | date:'shortTime' }} &#8210; {{ event.end | date:'shortTime' }}</p>
+        <p class="text-strong" *ngIf="event.campus.name">{{event.campus.name}} , {{ event.location.name }}</p>
+        <p class="text-strong" *ngIf="!event.campus.name">{{ event.location.name }}</p>
         
       </div>
     
@@ -36,9 +17,6 @@
       </div>
 
     </div>
-
-    
-
 </div>
 
 </div>
