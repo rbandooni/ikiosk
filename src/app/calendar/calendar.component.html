@@ -8,7 +8,7 @@
         <div class="overlay"></div>
         <h4 class="text-center">{{ event.title }}</h4>
         <p class="text-strong">{{ event.start | date }}<i class="fa fa-circle fa-small ml-3 mr-2"></i>   {{ event.start | date:'shortTime' }} &#8210; {{ event.end | date:'shortTime' }}</p>
-        <p class="text-strong" *ngIf="event.campus.name">{{event.campus.name}} , {{ event.location.name }}</p>
+        <p class="text-strong" *ngIf="event.campus.name">{{event.campus.name}}, {{ event.location.name }}</p>
         <p class="text-strong" *ngIf="!event.campus.name">{{ event.location.name }}</p>
         
       </div>

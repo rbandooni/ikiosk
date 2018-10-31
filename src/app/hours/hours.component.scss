@@ -3,20 +3,19 @@
     width: 95%;
     margin: 0 auto;
     height: auto;
-    border-radius:  1.5em;
+    border-radius: 1.5em;
     color: #000;
-    div{
+    div {
         padding: 2em 2em;
     }
 }
+
 #arrow {
     display: block;
     position: absolute;
     z-index: 999;
-    
     img {
         width: 50%;
-        
     }
 }
 
@@ -25,8 +24,7 @@
     background: #000;
     color: #eee;
     &:hover {
-       background-color: rgba(0, 0, 0, 1);
-
+        background-color: rgba(0, 0, 0, 1);
     }
 }
 
@@ -36,4 +34,111 @@
 
 .card-title {
     padding-left: 0.75rem;
+}
+
+.routeContainer {
+    height: 90vh;
+}
+
+.toggle {
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+    user-select: none;
+}
+
+.toggle--checkbox {
+    display: none;
+}
+
+.toggle--btn {
+    display: block;
+    margin: 0 auto;
+    font-size: 1.4em;
+    transition: all 350ms ease-in;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.toggle--btn,
+.toggle--checkbox,
+.toggle--feature {
+    &,
+    &:before,
+    &:after {
+        transition: all 250ms ease-in;
+    }
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+    }
+}
+
+/* ======================================================
+   Neon toggle
+   ====================================================== */
+
+@keyframes neon {
+    0% {
+        // text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 25px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 90px #FF9900, 0 0 90px #FF9900;
+        // text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #FF9900, 0 0 7px #FF9900, 0 0 9px #FF9900, 0 0 9px #FF9900;
+        // font-size: 1em;
+    }
+    100% {
+        // text-shadow: 0 0 5px #fff, 0 0 1px #fff, 0 0 1px #fff, 0 0 2px #FF9900, 0 0 3px #FF9900, 0 0 4px #FF9900, 0 0 5px #FF9900;
+        // font-size: 1.2em;
+    }
+}
+
+$textColor--active: #f1f1f1;
+$textColor--inactive: #333;
+.toggle--neon {
+    background-color: #222;
+    box-shadow: ( 0px 2px 10px rgba(0, 0, 0, 0.5), 0px 2px 3px rgba(0, 0, 0, 0.5));
+    border-bottom-left-radius: 3%;
+    border-bottom-right-radius: 3%;
+   
+    width: 100%;
+    margin-top: 0;
+    padding: 50px 0;
+    & .toggle--btn {
+        // font-family: 'Sour';
+        text-transform: uppercase;
+        font-size: 1.2em;
+        color: $textColor--inactive; // text-shadow: -1px -1px 1px #111, 1px 1px 1px #444;
+        text-shadow: 0 0 10px transparent, 0 0 15px transparent, 0 0 25px transparent, 0 0 40px transparent, 0 0 70px transparent, 0 0 90px transparent, 0 0 90px transparent;
+        &:before,
+        &:after {
+            display: inline-block;
+            margin: 0 20px;
+            transition: all 220ms ease-in-out;
+        }
+        &:before {
+            content: attr(data-label-off); // animation: neon 1.5s ease-in-out infinite alternate;
+            animation: neon 1s ease-in-out; 
+            animation-delay: 90ms;
+            color: $textColor--active;
+        }
+        &:after {
+            content: attr(data-label-on);
+        }
+    }
+    & .toggle--checkbox {
+        &:checked {
+            &+.toggle--btn {
+                &:before {
+                    animation: none;
+                    color: $textColor--inactive;
+                }
+                &:after {
+                    // animation: neon 1.5s ease-in-out infinite alternate;
+                    animation-delay: 90ms;
+                    animation: neon 1s ease-in-out;
+                    color: $textColor--active;
+                }
+            }
+        }
+    }
 }

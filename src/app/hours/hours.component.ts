@@ -16,53 +16,18 @@ export class HoursComponent implements OnInit {
 
   @Output() messageEvent = new EventEmitter<string>();
 
-  title: string = 'library hours';
+  title = 'library hours';
   routeInfo: string;
   hours: any[];
   todaysDate = new Date().toISOString().slice(0, 10);
 
   locations: object;
-  // waldo = {
-  //   image: '',
-  //   hrs: {
-  //     Sunday: '',
-  //     Monday: '',
-  //     Tuesday: '',
-  //     Wednesday: '',
-  //     Thursday: '',
-  //     Friday: '',
-  //     Saturday: ''
-  //   }
-  // };
-  // swain = {
-  //   image: '',
-  //   hrs: {
-  //     Sunday: '',
-  //     Monday: '',
-  //     Tuesday: '',
-  //     Wednesday: '',
-  //     Thursday: '',
-  //     Friday: '',
-  //     Saturday: ''
-  //   }
-  // };
-  // maybee = {
-  //   image: '',
-  //   hrs: {
-  //     Sunday: '',
-  //     Monday: '',
-  //     Tuesday: '',
-  //     Wednesday: '',
-  //     Thursday: '',
-  //     Friday: '',
-  //     Saturday: ''
-  //   }
-  // };
 
   waldo: any;
   maybee: any;
   swain: any;
   zhang: any;
+  vrlab: any;
 
   weekNumber: number;
   now: any;
@@ -73,10 +38,13 @@ export class HoursComponent implements OnInit {
     this.messageEvent.emit(this.router.url);
 
    }
-   hrsKeys;
-   today;
+   waldoRow: boolean;
+   hrsKeys: any;
+   today: any;
    hrsTmp: any;
   ngOnInit() {
+
+    this.waldoRow = true;
 
     this.now = new Date();
     const dateDay = this.now.getDay();
@@ -92,12 +60,16 @@ export class HoursComponent implements OnInit {
     }
 
     this.hoursService.getWaldoHours().subscribe((wld) => {
-      // console.log(wld);
+      console.log(wld);
       this.waldo = wld;
       // this.waldo['weeks'] = this.waldo.weeks[0];
       // console.log('waldo', this.waldo);
     });
+    this.hoursService.getVRLabHours().subscribe((vrlb) => {
+      console.log(vrlb);
+      this.vrlab = vrlb;
 
+    });
     this.hoursService.getMaybeeHours().subscribe((mayb) => {
       this.maybee = mayb;
 
