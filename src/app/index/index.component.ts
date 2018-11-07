@@ -51,7 +51,7 @@ export class IndexComponent implements AfterViewInit, OnInit {
     const dateObj = new Date();
     // var month = dateObj.getUTCMonth()  //+ 1; //months from 1-12
     const day = dateObj.getDate();
-    const year = dateObj.getUTCFullYear();
+    const year = dateObj.getFullYear();
     const weekday = new Array(7);
     const monthArr = new Array(12);
     monthArr[0] = 'January';
@@ -80,6 +80,8 @@ export class IndexComponent implements AfterViewInit, OnInit {
     this.day = day;
     this.month = month;
     this.currentDate = year + '-' + dateObj.getMonth() + '-' + day;
+    console.log(this.dayText);
+    console.log(this.currentDate);
 
   }
 
@@ -143,7 +145,7 @@ export class IndexComponent implements AfterViewInit, OnInit {
   drawNumbers(cx, radius) {
     let ang;
     let num;
-    cx.font = radius * 0.15 + 'px arial';
+    cx.font = radius * 0.2 + 'px Source Sans Pro';
     cx.textBaseline = 'middle';
     cx.textAlign = 'center';
     for (num = 1; num < 13; num++) {
@@ -161,9 +163,10 @@ export class IndexComponent implements AfterViewInit, OnInit {
   drawTime(cx, radius) {
     const now = new Date();
     let hour = now.getHours();
+    
     let minute = now.getMinutes();
     let second = now.getSeconds();
-    // hour
+    // alert(hour + ' ' + minute + ' ' + second);
     hour = hour % 12;
     hour = (hour * Math.PI / 6) +
       (minute * Math.PI / (6 * 60)) +

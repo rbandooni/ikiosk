@@ -88,6 +88,10 @@ export class CalendarComponent implements OnInit, OnDestroy {
     console.log('showModal run');
   }
 
+  scrollWindow() {
+    console.log('scroll');
+  }
+
   ngOnDestroy() {
 
   }

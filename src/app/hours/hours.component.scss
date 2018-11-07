@@ -94,17 +94,29 @@
 
 $textColor--active: #f1f1f1;
 $textColor--inactive: #333;
+.waldo {
+    box-shadow: -10px -1px 9px -3px rgba(0, 0, 0, 0.6) !important;
+}
+
+.nowaldo {
+    box-shadow: 10px -1px 9px -3px rgba(0, 0, 0, 0.6) !important;
+}
+
 .toggle--neon {
-    background-color: #222;
+    transition: all 0.2s linear;
+    background-color: #fff;
+    // background-color: rgba(79, 165, 222, 0.4);
     box-shadow: ( 0px 2px 10px rgba(0, 0, 0, 0.5), 0px 2px 3px rgba(0, 0, 0, 0.5));
-    border-bottom-left-radius: 3%;
-    border-bottom-right-radius: 3%;
-   
+    border-radius: 500px;
     width: 100%;
-    margin-top: 0;
-    padding: 50px 0;
+    margin-top: 0; // padding: 50px 0;
+    height: 4rem;
     & .toggle--btn {
         // font-family: 'Sour';
+        position: absolute;
+        left: 28%;
+        top: 50%;
+        transform: translate(-25%, -50%);
         text-transform: uppercase;
         font-size: 1.2em;
         color: $textColor--inactive; // text-shadow: -1px -1px 1px #111, 1px 1px 1px #444;
@@ -117,7 +129,7 @@ $textColor--inactive: #333;
         }
         &:before {
             content: attr(data-label-off); // animation: neon 1.5s ease-in-out infinite alternate;
-            animation: neon 1s ease-in-out; 
+            animation: neon 1s ease-in-out;
             animation-delay: 90ms;
             color: $textColor--active;
         }

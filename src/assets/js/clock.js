@@ -3,17 +3,18 @@ $(function(){
 
     $('#eventsModal').parent().on('show.bs.modal', function (e) { $(e.relatedTarget.attributes['data-target'].value).appendTo('body'); })
 
-    // $('.grid').masonry({
-    //     // options
-    //     itemSelector: '.gridParent',
-    //     columnWidth: 200
-    // });
-
     $(".swal2-popup #swal2-content p>a").click(function (e) { e.preventDefault(); console.log('link stopped') });
 
-    // $("#eventsModal a, #newsModal a").click(function(e) {
-    //     e.preventDefault();
-    //   });
+
+    // panZoomInstance = svgPanZoom('#map1', {
+    //     zoomEnabled: true,
+    //     controlIconsEnabled: true,
+    //     fit: true,
+    //     center: true,
+    //     minZoom: 0.1
+    // });
+
+    // panZoomInstance.zoom(0.2);
 
 })
 
@@ -28,8 +29,8 @@ function showModal(evt) {
         html: '<div id="eventsModal">'+evt.events[0].description+"</div>",
         // showCloseButton: true,
         confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
-        customClass: 'animated jello swal-wide',
-        timer: 60 * 1000
+        customClass: 'animated jello swal-wide'
+        
     })
 
 }
@@ -39,8 +40,8 @@ function showNewsPopup(feedData) {
     swal({
         title: feedData[0].title,
         customClass: 'swal-wide',
-        html: '<div id="newsModal">'+feedData[0].content+'</div>',
-        timer: 60 * 1000
+        html: '<div id="newsModal">'+feedData[0].content+'</div>'
+        
     })
 }
 

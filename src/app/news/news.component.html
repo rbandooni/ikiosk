@@ -19,7 +19,7 @@
             <div [class]="'eventGrid grid'+i" (tap)="loadNewsItem(newsItem.id)">
               <div class="overlay"></div>
               <h4 class="text-center" style="font-size: 1.3rem;font-weight: 600;">{{ newsItem.title }}</h4>
-              <p class="text-strong">{{ newsItem.published | date }}</p>  
+              <p class="text-strong">{{ newsItem.published | dstDate:'mediumDate' }}</p>  
             </div>
     
           </div>

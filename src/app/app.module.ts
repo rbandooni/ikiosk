@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HAMMER_GESTURE_CONFIG, HammerGestureConfig, BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +21,14 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { ImageViewerModule } from '@hallysonh/ngx-imageviewer';
 
 import { UserIdleModule } from 'angular-user-idle';
+import { DstDatePipe } from './calendar/dst-date.pipe';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+export class CustomHammerClass extends  HammerGestureConfig {
+  overrides = <any> {
+    'pinch': {enable: false},
+    'rotate': {enable: false}
+  };
+}
 
 @NgModule({
   declarations: [
@@ -32,7 +39,8 @@ import { UserIdleModule } from 'angular-user-idle';
     MapComponent,
     NewsComponent,
     RoomsComponent,
-    CalendarComponent
+    CalendarComponent,
+    DstDatePipe
   ],
   imports: [
     BrowserModule,
@@ -45,7 +53,7 @@ import { UserIdleModule } from 'angular-user-idle';
     // if user is idle for 30 sec, start timer for 20 sec and ping every 1 sec
     UserIdleModule.forRoot({idle: 10, timeout: 10, ping: 1}),
   ],
-  providers: [HoursService],
+  providers: [HoursService, { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerClass}],
   bootstrap: [AppComponent]
 })
 

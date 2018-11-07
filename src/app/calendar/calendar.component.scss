@@ -1,4 +1,5 @@
-$dict: vector event library landscape virtual scenic pattern vr panoramic;
+$dict: vector event library landscape virtual scenic pattern vr panoramic usa graphics computer design natural binary art wind sky art vivid picturesque pleasant soothing;
+$i: 0;
 // =eventsGrid
 //     @each $var in $dict {
 //         .eventGrid
@@ -21,19 +22,17 @@ $dict: vector event library landscape virtual scenic pattern vr panoramic;
         transform: translateY(-50%);
     }
     h4 {
-        font-size: 1.3rem;
-        // font-weight: 600;
+        font-size: 1.3rem; // font-weight: 600;
         text-shadow: 0 0 7px #2d2d2d;
     }
     .overlay {
         position: absolute;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.4);
     }
 }
 
-$i: 0;
 @each $var in $dict {
     .eventGrid.grid#{$i} {
         background-image: url('https://source.unsplash.com/600x200/?#{$var}');
