@@ -1,20 +1,4 @@
 <div class="container-fluid">
-  <!-- <div id="primary" class="row">
-  <header class="col-lg-3">
-    <img class="img-responsive" [src]="logoURL" alt="Western Michigan University Logo" style="height: 100px;">
-      <a class="btn btn-lg btn-success" routerLink="">Home</a> 
-  </header>
- 
-  </div> -->
-  <!-- <nav class="navbar navbar-light" style="background: transparent;"> -->
-    <!-- <a href="#" class="navbar-brand"> -->
-      <!-- <img [src]="logoURL" alt="Western Michigan University Libraries" style="width: 70%;"> -->
-    <!-- </a> -->
-    <!-- <form class="form-inline">
-      <a class="btn btn-danger" type="button" href="logout.php">Logout</a>
-
-    </form> -->
-  <!-- </nav> -->
   <!-- <div id="mainContent" [@fadeAnimation]="o.isActivated ? o.activatedRoute: ''" class="row"> -->
     <div id="mainContent" [className]="'row'">
 <router-outlet #o="outlet" (messageEvent)="receiveMessage($event)"></router-outlet>
@@ -22,11 +6,11 @@
   
 </div>
 
-<footer [className]="'fixed-bottom'">
+<footer [className]="'fixed-bottom '">
   <div class="container-fluid">
     <img class="logo" [src]="logoURL" alt="Western Michigan University Libraries">
     <img class="homeButton" [src]="homeButtonURL" alt="Home" routerLink="index">
-   <div class="timeContainer" style="display: inline;position: relative;float: right;"> <p style="margin-bottom: 0px;">{{ formattedTime }}</p> <p>{{ formattedDate }}</p></div>
+   <div class="timeContainer" style="position: relative;float: right;"> <p style="margin-bottom: 0px;">{{ formattedTime }}</p> <p>{{ formattedDate }}</p></div>
    
   </div>
 </footer>

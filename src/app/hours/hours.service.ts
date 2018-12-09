@@ -11,29 +11,31 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 @Injectable()
 export class HoursService {
 
+  apiRoot = 'https://ikiosk.library.wmich.edu/';
+
 data: any;
   constructor(private http:HttpClient) { }
 
   getAllHours(): Observable<any> {
-    return this.http.get('https://ikiosk.library.wmich.edu/api/hours/libcal.php?weeks=1');
+    return this.http.get(this.apiRoot + 'api/hours/libcal.php?weeks=1');
   }
 
   getWaldoHours(): Observable<any> {
-    return this.http.get('https://ikiosk.library.wmich.edu/api/hours/libcal.php?weeks=1&lib=waldo');
+    return this.http.get(this.apiRoot + 'api/hours/libcal.php?weeks=1&lib=waldo');
   }
   getSwainHours(): Observable<any> {
-    return this.http.get('https://ikiosk.library.wmich.edu/api/hours/libcal.php?weeks=1&lib=swain');
+    return this.http.get(this.apiRoot + 'api/hours/libcal.php?weeks=1&lib=swain');
   }
   getMaybeeHours(): Observable<any> {
-    return this.http.get('https://ikiosk.library.wmich.edu/api/hours/libcal.php?weeks=1&lib=maybee');
+    return this.http.get(this.apiRoot + 'api/hours/libcal.php?weeks=1&lib=maybee');
   }
 
   getZhangHours(): Observable<any> {
-    return this.http.get('https://ikiosk.library.wmich.edu/api/hours/libcal.php?weeks=1&lib=zhang');
+    return this.http.get(this.apiRoot + 'api/hours/libcal.php?weeks=1&lib=zhang');
   }
 
   getVRLabHours(): Observable<any> {
-    return this.http.get('https://ikioskdev.library.wmich.edu/api/hours/libcal.php?weeks=1&lib=vrlab');
+    return this.http.get(this.apiRoot + 'api/hours/libcal.php?weeks=1&lib=vrlab');
   }
 
 }

@@ -1,10 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-// @import url('https://fonts.googleapis.com/css?family=Montserrat');
-// @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
-// @import "~bootstrap/scss/bootstrap.scss";
-// @import "../node_modules/angular-calendar/css/angular-calendar.css";
-/* fallback */
+/*
+Documentation to include-media here : https://include-media.com/#documentation
+*/
+
+@import "~include-media/dist/_include-media.scss";
+
+/*
+Material Icons is a font library
+*/
 
 @font-face {
     font-family: 'Material Icons';
@@ -24,7 +28,6 @@
 // .swal2-popup #swal2-content a {
 //     /* text-align: center; */
 // }
-
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -38,6 +41,7 @@
     word-wrap: normal;
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
 }
 
@@ -118,23 +122,27 @@ body {
     border-radius: 8px;
 }
 
-
 .btn-xlarge {
     box-shadow: 1px 1px 0px #999, 2px 2px 0px #999, 3px 3px 0px #999, 4px 4px 0px #999, 5px 5px 0px #999, 6px 6px 0px #999;
 }
 
+@include media(">=desktop", ">tablet") {
+    .routeContainer {
+        padding-top: 3em;
+        padding-left: 3em;
+        padding-right: 3em;
+        padding-bottom: 0em; // margin: 0 auto;
+        margin-left: 3.5em;
+        margin-right: 3.5em;
+        border-radius: 1%;
+    }
+}
+
 .routeContainer {
-    padding-top: 3em;
-    padding-left: 3em;
-    padding-right: 3em;
-    padding-bottom: 0em;
-    background: #fff; // width: 100vw;
-    // margin: 0 auto;
-    color: #000;
-    margin-left: 3.5em;
-    margin-right: 3.5em;
-    border-radius: 1%;
     box-shadow: 1px 1px 0px #999, 2px 2px 0px #999, 3px 3px 0px #999, 4px 4px 0px #999, 5px 5px 0px #999, 6px 6px 0px #999; // height: 80vh;
+    background: #fff; // width: 100vw;
+    // background: rgba(255, 255, 255, 0.2);
+    color: #000;
 }
 
 .pageTitle {
