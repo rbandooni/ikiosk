@@ -28,6 +28,8 @@ export class HoursComponent implements OnInit {
   swain: any;
   zhang: any;
   vrlab: any;
+  rarebook: any;
+  makerspace: any;
 
   weekNumber: number;
   now: any;
@@ -42,7 +44,20 @@ export class HoursComponent implements OnInit {
    hrsKeys: any;
    today: any;
    hrsTmp: any;
+
+
   ngOnInit() {
+
+    $('#pnLeft').click(function() {
+      // show primary cards and hide secondary cards
+      $('#primaryCards').removeClass('d-none');
+      $('#secondaryCards').addClass('d-none');
+    });
+    $('#pnRight').click(function () {
+      // show secondary cards and hide primary cards
+      $('#secondaryCards').removeClass('d-none');
+      $('#primaryCards').addClass('d-none');
+    });
 
     this.waldoRow = true;
 
@@ -83,6 +98,14 @@ export class HoursComponent implements OnInit {
     this.hoursService.getZhangHours().subscribe((zhng) => {
       this.zhang = zhng;
     });
+
+    this.hoursService.getMSLabHours().subscribe((mkrspc) => {
+      this.makerspace = mkrspc;
+    });
+    this.hoursService.getRBLabHours().subscribe((rarebook) => {
+      this.rarebook = rarebook;
+    });
+
 
     // this.hoursService.getAllHours().subscribe(allHrs => {
     //   console.log(allHrs);

@@ -11,14 +11,23 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 @Injectable()
 export class HoursService {
 
-  apiRoot = 'https://ikiosk.library.wmich.edu/';
+  /*
+  * PROD 
+  */
+  // apiRoot = 'https://ikiosk.library.wmich.edu/';
+
+
+  /*
+  * DEV
+  */
+  apiRoot = 'https://ikioskdev.library.wmich.edu/';
 
 data: any;
   constructor(private http:HttpClient) { }
 
-  getAllHours(): Observable<any> {
-    return this.http.get(this.apiRoot + 'api/hours/libcal.php?weeks=1');
-  }
+  // getAllHours(): Observable<any> {
+  //   return this.http.get(this.apiRoot + 'api/hours/libcal.php?weeks=1');
+  // }
 
   getWaldoHours(): Observable<any> {
     return this.http.get(this.apiRoot + 'api/hours/libcal.php?weeks=1&lib=waldo');
@@ -37,5 +46,10 @@ data: any;
   getVRLabHours(): Observable<any> {
     return this.http.get(this.apiRoot + 'api/hours/libcal.php?weeks=1&lib=vrlab');
   }
-
+  getMSLabHours(): Observable<any> {
+    return this.http.get(this.apiRoot + 'api/hours/libcal.php?weeks=1&lib=makerspace');
+  }
+  getRBLabHours(): Observable<any> {
+    return this.http.get(this.apiRoot + 'api/hours/libcal.php?weeks=1&lib=rarebook');
+  }
 }

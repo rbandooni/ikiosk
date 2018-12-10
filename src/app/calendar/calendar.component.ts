@@ -27,7 +27,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
   modalEventData: any;
 
   apiTokenURL = 'https://api2.libcal.com/1.1/oauth/token';
-  apiURL = 'https://api2.libcal.com/1.1/events?cal_id=9993';
+  apiURL = 'https://api2.libcal.com/1.1/events?cal_id=9993&days=90&limit=20';
   specificEventURL = 'https://api2.libcal.com/1.1/events';
 
   constructor(private router: Router, private events: EventsService, private http:HttpClient) {}
@@ -50,7 +50,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
         // console.log(res);
         const headers = new HttpHeaders().set('Authorization', 'Bearer ' + res['access_token']);
         this.http.get(this.apiURL, { headers: headers }).toPromise().then(evts => {
-          console.log(evts);
+          console.log('Events', evts);
           this.eventsList = evts;
           resolve();
         });

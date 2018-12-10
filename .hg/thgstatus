@@ -8,4 +8,6 @@ m.git/refs/remotes/origin
 rdist/iKiosk
 msrc
 msrc/app
+msrc/app/calendar
 msrc/app/hours
+msrc/app/index
