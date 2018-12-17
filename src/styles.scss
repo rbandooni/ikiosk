@@ -5,7 +5,7 @@ Documentation to include-media here : https://include-media.com/#documentation
 */
 
 @import "~include-media/dist/_include-media.scss";
-
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /*
 Material Icons is a font library
 */
@@ -49,8 +49,7 @@ router-outlet~* {
     // position: absolute; //   height: 100%;
     //   width: 100%;
     // width: 99vw;
-    min-width: 99vw;
-    //max-width: 99vw;
+    min-width: 99vw; //max-width: 99vw;
 }
 
 * {
@@ -144,6 +143,7 @@ body {
     background: #fff; // width: 100vw;
     // background: rgba(255, 255, 255, 0.2);
     color: #000;
+    // background: url('https://www.toptal.com/designers/subtlepatterns/patterns/ricepaper.png');
 }
 
 .pageTitle {

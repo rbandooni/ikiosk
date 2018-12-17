@@ -1,6 +1,11 @@
 <div class="routeContainer">
 <div class="container-fluid" id="primaryNavContainer">
-  <div class="row flex-row flex-nowrap" id="primaryCards">
+  <!-- <div *ngIf="isMobile" class="p-4">
+    <button class="btn btn-block btn-bronco">
+      Branch Hours
+    </button>
+  </div> -->
+  <div class="row" id="primaryCards" *ngIf="primaryDeck">
 
     <!-- <div class="col-md-12 mt-3"> -->
       <!-- <div class="row waldoRow" *ngIf="waldoRow"> -->
@@ -10,14 +15,21 @@
             <img class="card-img-top" [src]="waldo?.image" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">{{ waldo?.name }}</h4>
-              <table class="table table-hover">
+              <hr>
+              <!-- <table class="table table-hover">
                 <tbody>
                   <tr *ngFor="let weeks of waldo?.hours" [className]="today === weeks.name ? 'today' : ''">
                     <td>{{ weeks.name }}</td>
                     <td>{{ weeks.rendered }}</td>
                   </tr>
                 </tbody>
-              </table>
+              </table> -->
+              <div class="tbl">
+                <div *ngFor="let weeks of waldo?.hours" [className]="today === weeks.name ? 'today tblrow' : 'tblrow'">
+                  <div class="tblcell">{{ weeks.name }}</div>
+                  <div class="tblcell">{{ weeks.rendered }}</div>
+                </div>
+              </div>
               <!-- 
               <table class="table table-hover">
                 <tbody>
@@ -65,51 +77,75 @@
         </div>
         <div class="col-xl-3 col-md-12 mt-3 col-sm-12">
           <div class="card md-auto">
-            <img class="card-img-top" [src]="maybee?.image" alt="Card image cap">
+            <img class="card-img-top" [src]="rarebook?.image" alt="Card image cap">
             <div class="card-body">
-              <h4 class="card-title">{{ maybee?.name }}</h4>
-              <table class="table table-hover">
-                <tbody>
-                  <tr *ngFor="let weeks of maybee?.hours" [className]="today === weeks.name ? 'today' : ''">
-                    <td>{{ weeks.name }}</td>
-                    <td>{{ weeks.rendered }}</td>
-                  </tr>
-                </tbody>
-              </table>
+              <h4 class="card-title text-center">
+                <!--{{ zhang?.name }}-->Special Collections and Rare Books Room</h4>
+                <hr>
+              <!-- <table class="table table-hover">
+                        <tbody>
+                          <tr *ngFor="let weeks of rarebook?.hours" [className]="today === weeks.name ? 'today' : ''">
+                            <td>{{ weeks.name }}</td>
+                            <td>{{ weeks.rendered }}</td>
+                          </tr>
+                        </tbody>
+                      </table> -->
+              <div class="tbl">
+                <div *ngFor="let weeks of rarebook?.hours" [className]="today === weeks.name ? 'today tblrow' : 'tblrow'">
+                  <div class="tblcell">{{ weeks.name }}</div>
+                  <div class="tblcell">{{ weeks.rendered }}</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-xl-3 col-md-12 mt-3 col-sm-12">
           <div class="card md-auto">
-            <img class="card-img-top" [src]="swain?.image" alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title">{{ swain?.name }}</h4>
-              <table class="table table-hover">
-                <tbody>
-                  <tr *ngFor="let weeks of swain?.hours" [className]="today === weeks.name ? 'today' : ''">
-                    <td>{{ weeks.name }}</td>
-                    <td>{{ weeks.rendered }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-12 mt-3 col-sm-12">
-          <div class="card md-auto">
-            <img class="card-img-top" [src]="zhang?.image" alt="Card image cap">
+            <img class="card-img-top" [src]="makerspace?.image" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">
-                <!--{{ zhang?.name }}-->Zhang Legacy Collections Center</h4>
-              <table class="table table-hover">
+                <!--{{ zhang?.name }}-->MakerSpace</h4>
+                <hr>
+              <!-- <table class="table table-hover">
                 <tbody>
-                  <tr *ngFor="let weeks of zhang?.hours" [className]="today === weeks.name ? 'today' : ''">
+                  <tr *ngFor="let weeks of makerspace?.hours" [className]="today === weeks.name ? 'today' : ''">
                     <td>{{ weeks.name }}</td>
                     <td>{{ weeks.rendered }}</td>
                   </tr>
                 </tbody>
-              </table>
+              </table> -->
+              <div class="tbl">
+                <div *ngFor="let weeks of makerspace?.hours" [className]="today === weeks.name ? 'today tblrow' : 'tblrow'">
+                  <div class="tblcell">{{ weeks.name }}</div>
+                  <div class="tblcell">{{ weeks.rendered }}</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-md-12 mt-3 col-sm-12">
+          <div class="card md-auto">
+            <img class="card-img-top" [src]="vrlab?.image" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">
+                <!--{{ zhang?.name }}-->Virtual Reality Lab</h4>
+                <hr>
+              <!-- <table class="table table-hover">
+                <tbody>
+                  <tr *ngFor="let weeks of vrlab?.hours" [className]="today === weeks.name ? 'today' : ''">
+                    <td>{{ weeks.name }}</td>
+                    <td>{{ weeks.rendered }}</td>
+                  </tr>
+                </tbody>
+              </table> -->
+              <div class="tbl">
+                <div *ngFor="let weeks of vrlab?.hours" [className]="today === weeks.name ? 'today tblrow' : 'tblrow'">
+                  <div class="tblcell">{{ weeks.name }}</div>
+                  <div class="tblcell">{{ weeks.rendered }}</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -118,65 +154,97 @@
       <!-- </div> -->
     <!-- </div> -->
   </div>
-  <div class="row flex-row flex-nowrap d-none" id="secondaryCards">
+  <div class="row" id="secondaryCards" *ngIf="!primaryDeck">
+        <div class="col-xl-4 col-md-12 mt-4 col-sm-12">
+          <div class="card md-auto">
+            <img class="card-img-top" [src]="maybee?.image" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">{{ maybee?.name }}</h4>
+              <hr>
+              <!-- <table class="table table-hover">
+                <tbody>
+                  <tr *ngFor="let weeks of maybee?.hours" [className]="today === weeks.name ? 'today' : ''">
+                    <td>{{ weeks.name }}</td>
+                    <td>{{ weeks.rendered }}</td>
+                  </tr>
+                </tbody>
+              </table> -->
+              <div class="tbl">
+                <div *ngFor="let weeks of maybee?.hours" [className]="today === weeks.name ? 'today tblrow' : 'tblrow'">
+                  <div class="tblcell">{{ weeks.name }}</div>
+                  <div class="tblcell">{{ weeks.rendered }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-12 mt-4 col-sm-12">
+          <div class="card md-auto">
+            <img class="card-img-top" [src]="swain?.image" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">{{ swain?.name }}</h4>
+              <hr>
+              <!-- <table class="table table-hover">
+                <tbody>
+                  <tr *ngFor="let weeks of swain?.hours" [className]="today === weeks.name ? 'today' : ''">
+                    <td>{{ weeks.name }}</td>
+                    <td>{{ weeks.rendered }}</td>
+                  </tr>
+                </tbody>
+              </table> -->
+              <div class="tbl">
+                <div *ngFor="let weeks of swain?.hours" [className]="today === weeks.name ? 'today tblrow' : 'tblrow'">
+                  <div class="tblcell">{{ weeks.name }}</div>
+                  <div class="tblcell">{{ weeks.rendered }}</div>
+                </div>
+              </div>
 
-        <div class="col-xl-4 col-md-12 mt-3 col-sm-12">
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-12 mt-4 col-sm-12">
           <div class="card md-auto">
-            <img class="card-img-top" [src]="makerspace?.image" alt="Card image cap">
+            <img class="card-img-top" [src]="zhang?.image" alt="Card image cap">
             <div class="card-body">
               <h4 class="card-title">
-                <!--{{ zhang?.name }}-->MakerSpace</h4>
-              <table class="table table-hover">
+                <!--{{ zhang?.name }}-->Zhang Legacy Collections Center</h4>
+                <hr>
+              <!-- <table class="table table-hover">
                 <tbody>
-                  <tr *ngFor="let weeks of makerspace?.hours" [className]="today === weeks.name ? 'today' : ''">
+                  <tr *ngFor="let weeks of zhang?.hours" [className]="today === weeks.name ? 'today' : ''">
                     <td>{{ weeks.name }}</td>
                     <td>{{ weeks.rendered }}</td>
                   </tr>
                 </tbody>
-              </table>
+              </table> -->
+              <div class="tbl">
+                <div *ngFor="let weeks of zhang?.hours" [className]="today === weeks.name ? 'today tblrow' : 'tblrow'">
+                  <div class="tblcell">{{ weeks.name }}</div>
+                  <div class="tblcell">{{ weeks.rendered }}</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-xl-4 col-md-12 mt-3 col-sm-12">
-          <div class="card md-auto">
-            <img class="card-img-top" [src]="rarebook?.image" alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title">
-                <!--{{ zhang?.name }}-->Special Collections and Rare Books Room</h4>
-              <table class="table table-hover">
-                <tbody>
-                  <tr *ngFor="let weeks of rarebook?.hours" [className]="today === weeks.name ? 'today' : ''">
-                    <td>{{ weeks.name }}</td>
-                    <td>{{ weeks.rendered }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-4 col-md-12 mt-3 col-sm-12">
-          <div class="card md-auto">
-            <img class="card-img-top" [src]="vrlab?.image" alt="Card image cap">
-            <div class="card-body">
-              <h4 class="card-title">
-                <!--{{ zhang?.name }}-->Virtual Reality Lab</h4>
-              <table class="table table-hover">
-                <tbody>
-                  <tr *ngFor="let weeks of vrlab?.hours" [className]="today === weeks.name ? 'today' : ''">
-                    <td>{{ weeks.name }}</td>
-                    <td>{{ weeks.rendered }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+
   </div>
-  <div class="row mt-2 pb-2">
-    <div class="col-md-4"></div>
+  <div class="row mt-5 mb-4 pb-4">
+    <!-- <div class="col-md-4"></div>
     <div class="col-md-4 text-center"><i class="fa fa-chevron-circle-left fa-4x mr-4" id="pnLeft"></i><i class="fa fa-chevron-circle-right fa-4x" id="pnRight"></i></div>
-    <div class="col-md-4"></div>
+    <div class="col-md-4"></div> -->
     
+    <!-- <button type="button" (click)="setDeck()" class="btn btn-primary">
+      <span [hidden]="primaryDeck">Waldo Hours</span>
+      <span [hidden]="!primaryDeck">Other Branch Hours</span>
+    </button> -->
+    <div class="col-12 text-center">
+    <button mat-raised-button color="primary" (click)="setDeck()" class="text-center hoursToggleBtn">
+      <span [hidden]="primaryDeck">Waldo Hours</span>
+      <span [hidden]="!primaryDeck">Branch Hours</span>
+    </button>
+    </div>
+
+
   </div>
 
   <!-- <div class="row toggleRow mt-5">

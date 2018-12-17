@@ -15,7 +15,7 @@ import { HoursService } from './hours/hours.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RoomsComponent } from './rooms/rooms.component';
 import { CalendarComponent } from './calendar/calendar.component';
-
+import { MatButtonModule } from '@angular/material';
 // import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 import { ImageViewerModule } from '@hallysonh/ngx-imageviewer';
@@ -45,6 +45,7 @@ export class CustomHammerClass extends  HammerGestureConfig {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatButtonModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     HttpClientModule,

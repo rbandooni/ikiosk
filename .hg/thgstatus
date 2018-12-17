@@ -6,6 +6,8 @@ m.git/logs/refs/remotes/origin
 m.git/refs/heads
 m.git/refs/remotes/origin
 rdist/iKiosk
+mnode_modules/@angular-devkit/build-optimizer/src/.cache
+mnode_modules/@angular/animations
 msrc
 msrc/app
 msrc/app/calendar

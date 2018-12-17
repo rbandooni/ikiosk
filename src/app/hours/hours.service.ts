@@ -14,13 +14,13 @@ export class HoursService {
   /*
   * PROD 
   */
-  // apiRoot = 'https://ikiosk.library.wmich.edu/';
+  apiRoot = 'https://ikiosk.library.wmich.edu/';
 
 
   /*
   * DEV
   */
-  apiRoot = 'https://ikioskdev.library.wmich.edu/';
+  // apiRoot = 'https://ikioskdev.library.wmich.edu/';
 
 data: any;
   constructor(private http:HttpClient) { }
