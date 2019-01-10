@@ -1,11 +1,24 @@
 <div class="routeContainer" (swipeup)="scrollWindow()" style="min-height: 60vh;">
   <div class="row mt-2">
+    <div class="col-md-12">
+        <mat-chip-list >
+          <mat-chip color="primary" [selected]="category.name === clickedCategory ? true : 'false'" *ngFor="let category of eventsCategories" (click)="filterEvents(category.name, category.id)">{{ category.name }}</mat-chip>
+        </mat-chip-list>
+    </div>
+
+  </div>
+  <div class="row mt-4">
+
+
 
     <div class="col-md-12">
       <div class="row grid">
-    <div class="col-md-4 mb-3 gridParent" *ngFor="let event of eventsList?.events; let i = index" (tap)="eventModal(event.id)">
-      <div [class]="'eventGrid grid'+i">
+    <div class="col-md-4 mb-3 gridParent" *ngFor="let event of eventsList?.events; let i = index" (click)="eventModal(event.id)">
+      <div [class]="'eventGrid'" [id]="'grid'+i">
         <div class="overlay"></div>
+        <div class="ribbon" *ngIf="event.seats">
+          {{ event.seats }} Seats Left
+        </div>
         <h4 class="text-center">{{ event.title }}</h4>
         <p class="text-strong">{{ event.start | date }}
           <i class="fa fa-circle fa-small ml-3 mr-2"></i>

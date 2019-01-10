@@ -8,6 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
+
 declare function showModal(evtData): any;
 
 @Component({
@@ -23,7 +24,8 @@ export class CalendarComponent implements OnInit, OnDestroy {
   // tokenData: any = null;
 
   eventsList: any;
-
+  eventsCategories: any;
+  clickedCategory = 'All';
   modalEventData: any;
 
   apiTokenURL = 'https://api2.libcal.com/1.1/oauth/token';
@@ -35,12 +37,31 @@ export class CalendarComponent implements OnInit, OnDestroy {
 @Output() reloadEvent = new EventEmitter();
 
   ngOnInit() {
-    this.getEvents();
+    this.getEvents(null);
 
   }
+  filterEvents(category: string, id: number) {
+    this.clickedCategory = category;
+    // alert(category);
+    this.getEvents(id);
 
-  getEvents() {
+  }
+ multiDimensionalUnique(arr) {
+  const uniques = [];
+  const itemsFound = {};
+  for (let i = 0, l = arr.length; i < l; i++) {
+    const stringified = JSON.stringify(arr[i]);
+    if (itemsFound[stringified]) { continue; }
+    uniques.push(arr[i]);
+    itemsFound[stringified] = true;
+  }
+  return uniques;
+}
 
+  getEvents(category) {
+    if (category !== null ) {
+        this.apiURL = this.apiURL + '&category=' + category;
+    }
     const promise = new Promise((resolve, reject) => {
       this.http.post(this.apiTokenURL, {
         'client_id': 303,
@@ -50,7 +71,37 @@ export class CalendarComponent implements OnInit, OnDestroy {
         // console.log(res);
         const headers = new HttpHeaders().set('Authorization', 'Bearer ' + res['access_token']);
         this.http.get(this.apiURL, { headers: headers }).toPromise().then(evts => {
-          console.log('Events', evts);
+           let events = JSON.stringify(evts);
+           events = JSON.parse(events);
+          const categories = [];
+          categories.push({id: 0, name: 'All'});
+
+          if (category === null) {
+          
+          $.each(events['events'], function(ind, val) {
+            $.each(val['category'], function(idx, vl) {
+              
+              categories.push(vl);
+              
+            });
+            
+          });
+            let i = 0;
+            $.each(events['events'], function (ind, val) {
+              $.each(val['category'], function (idx, vl) {
+                console.log(vl.name)
+                if (vl.name === 'Special Collections') {
+                  // document.getElementById('grid' + i).classList.add('special-collection');
+                }
+                // categories.push(vl);
+                i++;
+              });
+            });
+          // this.eventsCategories = evts['category'];
+
+          this.eventsCategories = this.multiDimensionalUnique(categories);
+
+          }
           this.eventsList = evts;
           resolve();
         });
@@ -62,6 +113,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
   }
 
   getEvent(id: number){
+    // console.log(this.eventsCategories)
     const promise = new Promise((res, rej) => {
       this.http.post(this.apiTokenURL, {
         'client_id': 303,

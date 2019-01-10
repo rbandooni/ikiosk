@@ -3,11 +3,13 @@
   <div class="row">
     <!-- Version 2 may use https://github.com/ariutta/svg-pan-zoom#demos for responsive issue fix  -->
     <div class="col-md-12 col-xs-12 col-lg-6 col-sm-12">
-      <ngx-imageviewer [src]=fullLowerLevel></ngx-imageviewer>
+      <!-- <ngx-imageviewer [src]=fullLowerLevel></ngx-imageviewer> -->
+      <img #img1 [src]=fullLowerLevel width="100%">
       <h2 class="animated bounceIn text-center mt-5 mb-5">Lower Level and 1st Floor</h2>
     </div>
     <div class="col-md-12 col-xs-12 col-lg-6 col-sm-12">
-      <ngx-imageviewer [src]=full2nd3rd></ngx-imageviewer>
+      <!-- <ngx-imageviewer [src]=full2nd3rd></ngx-imageviewer> -->
+      <img #img2 [src]=full2nd3rd width="100%">
       <h2 class="animated bounceIn text-center mt-5 mb-5">2nd and 3rd Floor</h2>
     </div>
 
