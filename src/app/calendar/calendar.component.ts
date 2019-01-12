@@ -29,7 +29,7 @@ export class CalendarComponent implements OnInit, OnDestroy {
   modalEventData: any;
 
   apiTokenURL = 'https://api2.libcal.com/1.1/oauth/token';
-  apiURL = 'https://api2.libcal.com/1.1/events?cal_id=9993&days=90&limit=20';
+  apiURL = 'https://api2.libcal.com/1.1/events?cal_id=9993&days=90&limit=100';
   specificEventURL = 'https://api2.libcal.com/1.1/events';
 
   constructor(private router: Router, private events: EventsService, private http:HttpClient) {}
@@ -71,32 +71,33 @@ export class CalendarComponent implements OnInit, OnDestroy {
         // console.log(res);
         const headers = new HttpHeaders().set('Authorization', 'Bearer ' + res['access_token']);
         this.http.get(this.apiURL, { headers: headers }).toPromise().then(evts => {
+          console.log('Actual ::', evts);
            let events = JSON.stringify(evts);
            events = JSON.parse(events);
           const categories = [];
           categories.push({id: 0, name: 'All'});
 
           if (category === null) {
-          
+
           $.each(events['events'], function(ind, val) {
             $.each(val['category'], function(idx, vl) {
-              
+
               categories.push(vl);
-              
+
             });
             
           });
-            let i = 0;
-            $.each(events['events'], function (ind, val) {
-              $.each(val['category'], function (idx, vl) {
-                console.log(vl.name)
-                if (vl.name === 'Special Collections') {
-                  // document.getElementById('grid' + i).classList.add('special-collection');
-                }
-                // categories.push(vl);
-                i++;
-              });
-            });
+            // let i = 0;
+            // $.each(events['events'], function (ind, val) {
+            //   $.each(val['category'], function (idx, vl) {
+            //     console.log(vl.name)
+            //     if (vl.name === 'Special Collections') {
+            //       // document.getElementById('grid' + i).classList.add('special-collection');
+            //     }
+            //     // categories.push(vl);
+            //     i++;
+            //   });
+            // });
           // this.eventsCategories = evts['category'];
 
           this.eventsCategories = this.multiDimensionalUnique(categories);

@@ -14,7 +14,7 @@ export class NewsComponent implements OnInit {
   newsFeed: any;
   popupFeed: any;
   // private xmlURL = "https://wmulibraries.blogspot.com/feeds/posts/default?alt=json-in-script&callback=libnews";
-  xmlURL = "http://wmulibraries.blogspot.com/feeds/posts/default";
+  // xmlURL = "http://wmulibraries.blogspot.com/feeds/posts/default";
 
   constructor(private news: NewsService) { }
 
