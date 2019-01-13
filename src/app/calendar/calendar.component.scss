@@ -1,3 +1,5 @@
+@import "~include-media/dist/_include-media.scss";
+
 $dict: vector event library landscape virtual scenic pattern vr panoramic usa graphics computer design natural binary art wind sky art vivid picturesque pleasant soothing vector event library landscape virtual scenic pattern vr panoramic usa graphics computer design natural binary art wind sky art vivid picturesque pleasant soothing;
 // $dict: library lib usa closestlibrary citylibrary wmulibrary library library library library library library library library library library library library library library library library library library library library library library library library library library library library library library;
 $i: 0;
@@ -7,6 +9,20 @@ $i: 0;
 //             background: image-url('https://source.unsplash.com/1600x900/?#{$var}')
 //             background-size: cover
 //     }
+
+@include media("handheld") {
+    .mat-chip-list-wrapper {
+        margin-top: 10px;
+    }
+}
+
+@include media(">=desktop") { 
+
+    .eventGrid {
+        height: 300px !important;
+    }
+}
+
 .eventGrid {
     position: relative; // top: 50%;
     // transform: translateY(-50%);

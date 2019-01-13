@@ -20,6 +20,43 @@ $break-small: 360;
 $break-kiosk: 1920;
 $break-medium: 1200;
 
+@media only screen and (max-width: 900px) {
+    .kioskGrid {
+        div {
+            .calendar {
+                font-size: 25px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 660px) {
+    .kioskGrid {
+        div {
+            .calendar {
+                font-size: 20px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 550px) {
+    .kioskGrid {
+        div {
+            .calendar {
+                font-size: 17px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 450px) {
+    .kioskGrid {
+        div {
+            .calendar {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: $break-kiosk - 1px) and (min-width: $break-medium + 1px) {
     .kioskGrid {
         div {
@@ -281,7 +318,9 @@ $break-medium: 1200;
         }
     }
 }
-
+.kioskGrid {
+    padding: 0px;
+}
 // @keyframes kenburns-bottom {
 //     0% {
 //         -webkit-transform: scale(1) translateY(0);

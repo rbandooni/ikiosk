@@ -127,7 +127,8 @@ body {
     box-shadow: 1px 1px 0px #999, 2px 2px 0px #999, 3px 3px 0px #999, 4px 4px 0px #999, 5px 5px 0px #999, 6px 6px 0px #999;
 }
 
-@include media(">=desktop", ">tablet") {
+@include media(">=kiosk-screen") {
+
     .routeContainer {
         padding-top: 3em;
         padding-left: 3em;
@@ -135,11 +136,19 @@ body {
         padding-bottom: 0em; // margin: 0 auto;
         margin-left: 3.5em;
         margin-right: 3.5em;
-        border-radius: 1%;
+        border-radius: 12px;
+    }
+}
+@include media("<large-screen", ">desktop") {
+    h4.card-title {
+        //font-size: 1.1em !important;
     }
 }
 
 .routeContainer {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     box-shadow: 1px 1px 0px #999, 2px 2px 0px #999, 3px 3px 0px #999, 4px 4px 0px #999, 5px 5px 0px #999, 6px 6px 0px #999; // height: 80vh;
     background: #fff; // width: 100vw;
     // background: rgba(255, 255, 255, 0.2);
