@@ -32,15 +32,25 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    this.timeInterval();
+    this.router.events.subscribe((res) => {
+      console.log(this.router.url);
+      if (this.router.url !== '/') {
+        this.userIdle.startWatching();
+      } else {
+        console.log('UserIdle check non-existent on this Route');
+      }
+    });
+    // console.log('hey')
+    // this.timeInterval();
     // console.log('URL', this.router.url);
+
+
     this.userIdle.onTimerStart().subscribe(count => {
       console.log('Count', count);
 
     });
 
-    // this.route.url.subscribe(url => console.log(url[0].path));
+    // this.route.url.subscribe(url => console.log('Path ', url[0].path));
 
     this.userIdle.onTimeout().subscribe(() => {
       console.log('Timeout!');
@@ -53,12 +63,12 @@ export class AppComponent implements OnInit {
     });
   }
 
-  timeInterval() {
-    return setInterval(() => {
-      this.timeFormatter();
-      // console.log('time formatter interval');
-    }, 1 * 1000);
-  }
+  // timeInterval() {
+  //   return setInterval(() => {
+  //     this.startWatching();
+  //     // console.log('time formatter interval');
+  //   }, 1 * 1000);
+  // }
   stop() {
     this.userIdle.stopTimer();
   }

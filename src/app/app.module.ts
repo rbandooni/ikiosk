@@ -19,11 +19,14 @@ import { MatButtonModule } from '@angular/material';
 import { MatChipsModule } from '@angular/material/chips';
 // import { NgxImageZoomModule } from 'ngx-image-zoom';
 
-import { ImageViewerModule } from '@hallysonh/ngx-imageviewer';
+// import { ImageViewerModule } from '@hallysonh/ngx-imageviewer';
 
 import { UserIdleModule } from 'angular-user-idle';
 import { DstDatePipe } from './calendar/dst-date.pipe';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { PinchZoomModule } from 'ngx-pinch-zoom';
+
 export class CustomHammerClass extends  HammerGestureConfig {
   overrides = <any> {
     'pinch': {enable: false},
@@ -51,10 +54,11 @@ export class CustomHammerClass extends  HammerGestureConfig {
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
     HttpClientModule,
+    PinchZoomModule,
     // NgxImageZoomModule.forRoot(),
-    ImageViewerModule,
+    // ImageViewerModule,
     // if user is idle for 30 sec, start timer for 20 sec and ping every 1 sec
-    UserIdleModule.forRoot({idle: 10, timeout: 10, ping: 1}),
+    UserIdleModule.forRoot({idle: 5, timeout: 10, ping: 1}),
   ],
   providers: [HoursService, { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerClass}],
   bootstrap: [AppComponent]

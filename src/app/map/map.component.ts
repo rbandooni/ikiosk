@@ -37,14 +37,54 @@ export class MapComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const hammer1 = new Hammer(this.img1Element.nativeElement);
-    hammer1.get('pinch').set({
-      enable: true
-    });
-    const hammer2 = new Hammer(this.img2Element.nativeElement);
-    hammer1.get('pinch').set({
-      enable: true
-    });
+    // const webpage = document.querySelector('.leftSideImage')[0];
+    // const image1 = this.img1Element;
+    // const image2 = this.img2Element;
+
+    // const mc = new Hammer.Manager(image1);
+    // const pinch = new Hammer.Pinch();
+    // const pan = new Hammer.Pan();
+
+    // pinch.recognizeWith(pan);
+    // mc.add([pinch, pan]);
+
+    // let adjustScale = 1;
+    // let adjustDeltaX = 0;
+    // let adjustDeltaY = 0;
+
+    // let currentScale = null;
+    // let currentDeltaX = null;
+    // let currentDeltaY = null;
+
+    // mc.on('pinch pan', function (ev) {
+
+    //   const transforms = [];
+
+    //   currentScale = adjustScale * ev.scale;
+    //   currentDeltaX = adjustDeltaX + (ev.deltaX / currentScale);
+    //   currentDeltaY = adjustDeltaY + (ev.deltaY / currentScale);
+    //   transforms.push('scale(' + currentScale + ')');
+    //   transforms.push('translate(' + currentDeltaX + 'px,' + currentDeltaY + 'px)');
+    //   webpage.style.transform = transforms.join(' ');
+    // });
+
+    // mc.on('panend pinchend', function (ev) {
+
+    //   // Saving the final transforms for adjustment next time the user interacts.
+    //   adjustScale = currentScale;
+    //   adjustDeltaX = currentDeltaX;
+    //   adjustDeltaY = currentDeltaY;
+
+    // });
+
+    // const hammer1 = new Hammer(this.img1Element.nativeElement);
+    // hammer1.get('pinch').set({
+    //   enable: true
+    // });
+    // const hammer2 = new Hammer(this.img2Element.nativeElement);
+    // hammer1.get('pinch').set({
+    //   enable: true
+    // });
   }
 
 

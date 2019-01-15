@@ -6,6 +6,10 @@ Documentation to include-media here : https://include-media.com/#documentation
 
 @import "~include-media/dist/_include-media.scss";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+$breakpoints: ( 
+    'large-screen': 1200px, 
+    'kiosk-screen': 1920px
+    ) !default;
 /*
 Material Icons is a font library
 */
@@ -128,7 +132,6 @@ body {
 }
 
 @include media(">=kiosk-screen") {
-
     .routeContainer {
         padding-top: 3em;
         padding-left: 3em;
@@ -139,6 +142,7 @@ body {
         border-radius: 12px;
     }
 }
+
 @include media("<large-screen", ">desktop") {
     h4.card-title {
         //font-size: 1.1em !important;

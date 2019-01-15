@@ -33,10 +33,9 @@ export class IndexComponent implements AfterViewInit, OnInit {
 
     if (window.screen.availWidth === 1920) {
       this.ikioskGrid = true;
-    } else if(window.screen.availWidth > 360 || window.screen.availWidth > 1920) {
+    } else if (window.screen.availWidth > 360 || window.screen.availWidth > 1920) {
       this.ikioskGrid = true;
-    }
-    else {
+    } else {
       this.ikioskGrid = false;
     }
     console.log(window.screen.width);
@@ -98,7 +97,7 @@ export class IndexComponent implements AfterViewInit, OnInit {
 
       // let cx = canvas.getContext("2d");
       let radius = canvasEl.height / 2;
-      console.log('radius', radius)
+      console.log('radius', radius);
       this.cx.translate(radius, radius);
       radius = radius * 0.90;
       // this.cx = cx;
@@ -133,7 +132,7 @@ export class IndexComponent implements AfterViewInit, OnInit {
     grad.addColorStop(0.5, 'white');
     grad.addColorStop(1, '#333');
     // cx.strokeStyle = grad;
-    cx.strokeStyle = 'rgba(0,0,0,0.8)'
+    cx.strokeStyle = 'rgba(0,0,0,0.8)';
     // cx.lineWidth = radius * 0.1;
     cx.stroke();
     cx.beginPath();
@@ -163,7 +162,7 @@ export class IndexComponent implements AfterViewInit, OnInit {
   drawTime(cx, radius) {
     const now = new Date();
     let hour = now.getHours();
-    
+
     let minute = now.getMinutes();
     let second = now.getSeconds();
     // alert(hour + ' ' + minute + ' ' + second);

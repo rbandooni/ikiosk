@@ -39,6 +39,7 @@
     "isotope-layout": "^3.0.6",
     "jquery": "^3.3.1",
     "moment-timezone": "^0.5.23",
+    "ngx-pinch-zoom": "^1.2.0",
     "ngx-xml2json": "^1.0.2",
     "npm": "^6.4.1",
     "popper.js": "^1.14.3",
