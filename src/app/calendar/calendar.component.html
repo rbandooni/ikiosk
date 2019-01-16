@@ -17,7 +17,7 @@
       <div [class]="'eventGrid'" [id]="'grid'+i">
         <div class="overlay"></div>
         <div class="ribbon" *ngIf="event.seats">
-          {{ event.seats }} Seats Left
+          {{ event.seats - event.seats_taken }} Seats Left
         </div>
         <h4 class="text-center">{{ event.title }}</h4>
         <p class="text-strong">{{ event.start | date }}

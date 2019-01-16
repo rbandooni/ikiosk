@@ -127,18 +127,12 @@ export class CalendarComponent implements OnInit, OnDestroy {
         });
       });
     });
+    return promise;
   }
 
   eventModal(id: number) {
-
     this.getEvent(id);
-    // window.localStorage.setItem('ModalWindow', 'true');
-    // this.modalEventData = this.eventsList.events.filter(function(i) {
-    //   return i.id = id;
-    // });
-
-
-    console.log('showModal run');
+    console.log('showModal executed');
   }
 
   scrollWindow() {

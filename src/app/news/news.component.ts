@@ -24,7 +24,7 @@ export class NewsComponent implements OnInit {
       // console.log(newsData);
       this.newsFeed = newsData.items;
       console.log(this.newsFeed);
-    })
+    });
 
   }
 

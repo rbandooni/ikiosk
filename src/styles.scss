@@ -6,7 +6,10 @@ Documentation to include-media here : https://include-media.com/#documentation
 
 @import "~include-media/dist/_include-media.scss";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-$breakpoints: ( 
+$breakpoints: (
+    'phone': 320px,
+    'tablet': 768px,
+    'desktop': 1024px,
     'large-screen': 1200px, 
     'kiosk-screen': 1920px
     ) !default;

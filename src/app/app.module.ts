@@ -57,8 +57,8 @@ export class CustomHammerClass extends  HammerGestureConfig {
     PinchZoomModule,
     // NgxImageZoomModule.forRoot(),
     // ImageViewerModule,
-    // if user is idle for 30 sec, start timer for 20 sec and ping every 1 sec
-    UserIdleModule.forRoot({idle: 5, timeout: 10, ping: 1}),
+    // if user is idle for 30 sec, start timer for 29 sec and ping every 1 sec
+    UserIdleModule.forRoot({idle: 30, timeout: 29, ping: 1}),
   ],
   providers: [HoursService, { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerClass}],
   bootstrap: [AppComponent]
