@@ -29,8 +29,8 @@ import { PinchZoomModule } from 'ngx-pinch-zoom';
 
 export class CustomHammerClass extends  HammerGestureConfig {
   overrides = <any> {
-    'pinch': {enable: false},
-    'rotate': {enable: false}
+    'pinch': {enable: true},
+    'rotate': {enable: true}
   };
 }
 

@@ -40,8 +40,9 @@ export class AppComponent implements OnInit {
         console.log('UserIdle check non-existent on this Route');
       }
     });
+    // this.timeFormatter();
     // console.log('hey')
-    // this.timeInterval();
+    this.timeInterval();
     // console.log('URL', this.router.url);
 
 
@@ -63,12 +64,12 @@ export class AppComponent implements OnInit {
     });
   }
 
-  // timeInterval() {
-  //   return setInterval(() => {
-  //     this.startWatching();
-  //     // console.log('time formatter interval');
-  //   }, 1 * 1000);
-  // }
+  timeInterval() {
+    return setInterval(() => {
+      this.timeFormatter();
+      // console.log('time formatter interval');
+    }, 1 * 1000);
+  }
   stop() {
     this.userIdle.stopTimer();
   }
