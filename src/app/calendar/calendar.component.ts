@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
-declare function showModal(evtData): any;
+declare function showModal(evtData, registrationFlag): any;
 
 @Component({
   selector: 'app-calendar',
@@ -123,7 +123,11 @@ export class CalendarComponent implements OnInit, OnDestroy {
       }).toPromise().then(res => {
         const headers = new HttpHeaders().set('Authorization', 'Bearer ' + res['access_token']);
         this.http.get(this.specificEventURL + '/' + id, { headers: headers}).toPromise().then(evts => {
-          showModal(evts);
+          if (evts['events'][0].seats === null || evts['events'][0].seats === '') {
+            showModal(evts, 1);
+          } else {
+            showModal(evts, 0);
+          }
         });
       });
     });

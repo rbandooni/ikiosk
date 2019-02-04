@@ -1,23 +1,21 @@
 @import "~include-media/dist/_include-media.scss";
-
 $dict: vector event library landscape virtual scenic pattern vr panoramic usa graphics computer design natural binary art wind sky art vivid picturesque pleasant soothing vector event library landscape virtual scenic pattern vr panoramic usa graphics computer design natural binary art wind sky art vivid picturesque pleasant soothing;
 // $dict: library lib usa closestlibrary citylibrary wmulibrary library library library library library library library library library library library library library library library library library library library library library library library library library library library library library library;
 $i: 0;
+$gridBGURL: 'blue-gradation-background.jpg';
 // =eventsGrid
 //     @each $var in $dict {
 //         .eventGrid
 //             background: image-url('https://source.unsplash.com/1600x900/?#{$var}')
 //             background-size: cover
 //     }
-
 @include media("handheld") {
     .mat-chip-list-wrapper {
         margin-top: 10px;
     }
 }
 
-@include media(">=desktop") { 
-
+@include media(">=desktop") {
     .eventGrid {
         height: 300px !important;
     }
@@ -73,7 +71,8 @@ $i: 0;
 
 @each $var in $dict {
     .eventGrid#grid#{$i} {
-        background-image: url('https://source.unsplash.com/600x200/?#{$var}');
+        // background-image: url('https://source.unsplash.com/600x200/?#{$var}');
+        background-image: url('/assets/images/blue-gradation-background.jpg');
         background-size: cover;
         box-shadow: 0 5px 6px #2d2d2d;
         border-top-left-radius: 12px;
